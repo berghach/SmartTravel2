@@ -6,13 +6,13 @@ class Reservation {
     private $id;
     private $siege_num;
     private $reserv_date;
-    private $client_id;
+    private $client_email;
 
-    public function __construct($id, $siege_num, $reserv_date, $client_id){
+    public function __construct($id, $siege_num, $reserv_date, $client_email){
         $this->id = $id;
         $this->siege_num = $siege_num;
         $this->reserv_date = $reserv_date;
-        $this->client_id = $client_id;
+        $this->client_email = $client_email;
     }
 
     
@@ -42,11 +42,11 @@ class Reservation {
     }
 
     /**
-     * Get the value of client_id
+     * Get the value of client_email
      */ 
-    public function getClient_id()
+    public function getClient_email()
     {
-        return $this->client_id;
+        return $this->client_email;
     }
 }
 
