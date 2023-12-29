@@ -9,10 +9,10 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "BUS",
-            "database": "bustravel",
+            "name": "brief10",
+            "database": "smarttravel",
             "username": "root",
-            "password": ""
+            "askForPassword": true
         }
     ]
 }
