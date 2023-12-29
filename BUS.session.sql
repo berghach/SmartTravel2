@@ -247,3 +247,33 @@ MODIFY COLUMN id INT AUTO_INCREMENT;
 ALTER TABLE Horraire
 ADD FOREIGN KEY (tri9) REFERENCES Route(id);
 
+-- @block
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM ('admin', 'operateur', 'client', 'unverified') DEFAULT 'unverified',
+    is_active BOOLEAN DEFAULT 1,
+    date_register DATETIME
+   
+    
+);
+
+-- @block
+
+CREATE TRIGGER before_insert_users
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    IF NOT (
+        (NEW.role = 'admin' AND NEW.is_active IS NULL AND NEW.date_register IS NULL ) OR
+        (NEW.role = 'operateur' AND NEW.is_active IS NOT NULL AND NEW.date_register IS NULL ) OR
+        (NEW.role = 'client' AND NEW.is_active IS NOT NULL AND NEW.date_register IS NOT NULL )
+    ) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Invalid data for the specified role.';
+    END IF;
+END;
+
+

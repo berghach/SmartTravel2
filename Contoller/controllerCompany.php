@@ -4,9 +4,22 @@
  include "Model\City\CityDAO.php" ;
  include "Model\Route\RouteDAO.php" ;
  include "Model\horraire\horraireDAO.php" ;
+ include "Model\user\userDAO.php" ;
 
 
+class controller_users{
+    function getusers()  {
+        
+        $userDAO = new userDAO() ;
+        $users = $userDAO-> get_users();
+     
+        include "View\operateur_add.php" ; 
+        include "View\user.php" ; 
 
+     
+     
+        }
+}
 class contoller_companys {
 
     function getcompanys()  {
@@ -139,21 +152,7 @@ class contoller_Citys {
  
 
 
-    function setCitys()  {
-       $name = $_POST["name"] ; 
-       $capacite = $_POST["capacite"] ; 
-       $id = $_POST["id"] ; 
-       $company = $_POST["company"] ; 
-
-   $CityDAO = new CityDAO() ;
-   $City = new City(  $id  ,  $name) ;
-
-
-    $CityDAO->update_City($City);
-
-    include "View\CityForm.php"  ; 
-       
-    }
+    
 }
 
 class contoller_Routes {
