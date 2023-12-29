@@ -106,55 +106,6 @@ class contoller_BUSs {
     }
 }
 
-class contoller_Citys {
-
-    function getCitys()  {
-        
-   $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
-
-   include "View\City.php" ; 
-
-
-    }
-
-    function getCitysForm()  {
-        
-   $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
-
- return $Citys ;
-
-
-    }
-
-
-    function afficheform()  {
-        $id = "2345678901234"  ; 
-        $CityDAO = new CityDAO() ;
-        $City = $CityDAO->getCityByID($id) ;
-  
-        include "View\CityForm.php" ; 
-    }
- 
-
-
-    function setCitys()  {
-       $name = $_POST["name"] ; 
-       $capacite = $_POST["capacite"] ; 
-       $id = $_POST["id"] ; 
-       $company = $_POST["company"] ; 
-
-   $CityDAO = new CityDAO() ;
-   $City = new City(  $id  ,  $name) ;
-
-
-    $CityDAO->update_City($City);
-
-    include "View\CityForm.php"  ; 
-       
-    }
-}
 
 class contoller_Routes {
 
