@@ -1,12 +1,26 @@
 <?php 
+require_once 'connection\connexion.php';
  include "Model\company\companyDAO.php" ;
  include "Model\BUS\BUSDAO.php" ;
- include "Model\City\CityDAO.php" ;
+
  include "Model\Route\RouteDAO.php" ;
  include "Model\horraire\horraireDAO.php" ;
+ include "Model\user\userDAO.php" ;
 
 
+class controller_users{
+    function getusers()  {
+        
+        $userDAO = new userDAO() ;
+        $users = $userDAO-> get_users();
+     
+        include "View\operateur_add.php" ; 
+        include "View\user.php" ; 
 
+     
+     
+        }
+}
 class contoller_companys {
 
     function getcompanys()  {
