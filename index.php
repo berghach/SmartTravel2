@@ -1,5 +1,5 @@
 <?php 
-include "Contoller/controllercompany.php" ;
+include "Controller/controllercompany.php" ;
 $contoller_companys = new contoller_companys() ; 
 $contoller_BUSs = new contoller_BUSs() ; 
 

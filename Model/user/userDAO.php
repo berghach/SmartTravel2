@@ -1,5 +1,5 @@
 <?php 
-require_once 'Model\connexion.php';
+
 require_once 'Model\user\modeluser.php';
 
 class userDAO{

@@ -1,6 +1,7 @@
 <?php
-require_once 'Model\connexion.php';
-require_once 'Model\company\modelcompany.php';
+
+require_once 'Model\Company\modelCompany.php';
+
 class CompanyDAO{
     private $db;
     public function __construct(){

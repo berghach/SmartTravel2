@@ -1,7 +1,8 @@
 <?php 
+require_once 'connection\connexion.php';
  include "Model\company\companyDAO.php" ;
  include "Model\BUS\BUSDAO.php" ;
- include "Model\City\CityDAO.php" ;
+
  include "Model\Route\RouteDAO.php" ;
  include "Model\horraire\horraireDAO.php" ;
  include "Model\user\userDAO.php" ;
