@@ -1,7 +1,7 @@
 
 USE bustravel; 
 
--- @block
+--@block
 
 
 CREATE TABLE Company(
