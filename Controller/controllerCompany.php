@@ -214,7 +214,7 @@ class contoller_horraires {
        $tri9 = $_POST["tri9"] ; 
 
    $horraireDAO = new horraireDAO() ;
-   $horraire = new horraire(  $hr_dep, $hr_arv,$Prix,$nhar,$tri9) ;
+   $horraire = new horraire($hr_dep, $hr_arv,$Prix,$nhar,$tri9) ;
 
 
     $horraireDAO->update_horraire($horraire);
@@ -222,4 +222,37 @@ class contoller_horraires {
     include "View\horraireForm.php"  ; 
        
     }
+}
+
+class contoller_Citys {
+
+    function getCitys()  {
+        
+   $CityDAO = new CityDAO() ;
+   $Citys = $CityDAO-> get_Citys();
+
+   include "View\City.php" ; 
+
+
+    }
+
+    function getCitysForm()  {
+        
+   $CityDAO = new CityDAO() ;
+   $Citys = $CityDAO-> get_Citys();
+
+ return $Citys ;
+
+
+    }
+
+
+    function afficheform()  {
+        $id = "2345678901234"  ; 
+        $CityDAO = new CityDAO() ;
+        $City = $CityDAO->getCityByID($id) ;
+  
+        include "View\CityForm.php" ; 
+    }
+ 
 }

@@ -26,6 +26,9 @@ class RouteDAO{
         $stmt = $this->db->query($query);
         $stmt -> execute();
     }
+    public function getNameCityById($id){
+        
+    }
 
     function getRouteByID($id) {
         $query = "SELECT * FROM Route where id = $id";
