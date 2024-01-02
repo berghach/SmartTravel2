@@ -1,7 +1,7 @@
-
+CREAT DATABASE bustravel;
 USE bustravel; 
 
---@block
+
 
 
 CREATE TABLE Company(
@@ -31,7 +31,7 @@ CREATE TABLE Route(
     duree TIME
 
 );
--- @block
+
 CREATE TABLE Horraire(
     hr_dep TIME ,
     hr_arv TIME ,
@@ -52,7 +52,7 @@ INSERT INTO Company (id, name, image) VALUES
 (3, 'Atlas Express', 'atlas_express_logo.jpg'),
 (4, 'Marrakech Tours', 'marrakech_tours_logo.jpg'),
 (5, 'Moroccan Explorer', 'moroccan_explorer_logo.jpg');
--- @block
+
 -- Insert into City table
 INSERT INTO City (name) VALUES
 ('Casablanca'),
@@ -121,7 +121,7 @@ INSERT INTO City (name) VALUES
 ('Midelt'),
 ('Azrou'),
 ('Drargua');
--- @block
+
 -- Insert into Bus table
 INSERT INTO Bus (id, name, capacite, Company) VALUES
 (1, 'BusA', 50, 1),
@@ -147,10 +147,10 @@ INSERT INTO Horraire (hr_dep, hr_arv, Prix, nhar, tri9) VALUES
 --     FROM Horraire
 --     WHERE Horraire.tri9 = Route.id
 -- );
--- @block
+
 
 DELETE FROM Company;
--- @block
+
 INSERT INTO Company (id, name, image) VALUES
 (1, 'CTM', 'ctm_logo.jpg'),
 (2, 'Sahara Voyages', 'sahara_voyages_logo.jpg'),
@@ -234,7 +234,7 @@ INSERT INTO Horraire (hr_dep, hr_arv, Prix, nhar, tri9) VALUES
 ('08:45:00', '11:15:00', 35.00, '2023-01-20', 20);
 
 
--- @block 
+ 
 -- Drop the foreign key constraint in Horraire table
 ALTER TABLE Horraire
 DROP FOREIGN KEY horraire_ibfk_1;
@@ -247,7 +247,7 @@ MODIFY COLUMN id INT AUTO_INCREMENT;
 ALTER TABLE Horraire
 ADD FOREIGN KEY (tri9) REFERENCES Route(id);
 
--- @block
+
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -260,7 +260,7 @@ CREATE TABLE users (
     
 );
 
--- @block
+
 
 CREATE TRIGGER before_insert_users
 BEFORE INSERT ON users
@@ -276,4 +276,86 @@ BEGIN
     END IF;
 END;
 
+Drop DATABASE bustravel;
+CREATE DATABASE bustravel;
+
+
+create table Entreprise (
+idEn int primary key AUTO_INCREMENT,
+nomEn varchar(50) not null,
+img varchar(200));
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role ENUM ('admin', 'operateur', 'client') DEFAULT 'client',
+    is_active BOOLEAN DEFAULT 1,
+    date_register DATETIME,
+    fk_idEn INT,
+    FOREIGN KEY (fk_idEn) REFERENCES Entreprise(idEn)
+);
+
+CREATE TRIGGER before_insert_users
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    IF NOT (
+        (NEW.role = 'admin' AND NEW.is_active IS NULL AND NEW.date_register IS NULL AND NEW.fk_idEn IS NULL) OR
+        (NEW.role = 'operateur' AND NEW.is_active IS NOT NULL AND NEW.date_register IS NULL AND NEW.fk_idEn IS NOT NULL) OR
+        (NEW.role = 'client' AND NEW.is_active IS NOT NULL AND NEW.date_register IS NOT NULL AND NEW.fk_idEn IS NULL)
+    ) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Invalid data for the specified role.';
+    END IF;
+END;
+
+
+CREATE TABLE Autobus (
+  immat varchar(30) primary key ,
+  numbus int(11) unique not null,
+  capacite int(11) not NULL,
+  fk_idEn int(11) not null,
+ FOREIGN KEY (fk_idEn) REFERENCES Entreprise(idEn)
+) ;
+
+create table route (
+idVil_dep int,
+idVil_arv int ,
+PRIMARY KEY (idVil_dep, idVil_arv),
+dist float not null,
+duree time not null);
+
+create table voyage(
+idVoy int  primary key AUTO_INCREMENT,
+hr_dep time not null,
+hr_arv time not null,
+fk_idVil_dep int not null,
+fk_idVil_arv int not null,
+FOREIGN KEY (fk_idVil_dep, fk_idVil_arv) REFERENCES route(idVil_dep, idVil_arv),
+prix float not null,
+date_voy date not null);
+
+
+create table points (
+idPnts int primary key AUTO_INCREMENT,
+nbrPnts int not null);
+
+create table reservation (
+idRes int primary key AUTO_INCREMENT,
+fk_email VARCHAR(255) not null,
+FOREIGN KEY (fk_email) REFERENCES users(email),
+fk_idVoy int not null,
+FOREIGN KEY (fk_idVoy) REFERENCES voyage(idVoy),
+fk_idPnts int unique not null,
+FOREIGN KEY (fk_idPnts) REFERENCES points(idPnts),
+num_sieg int not null,
+date_res DATETIME);
+
+create table notification (
+idNot int primary key auto increment,
+fk_idRes int not null,
+FOREIGN KEY (fk_idRes) REFERENCES reservation(idRes),
+msg varchar(100) not null);
 

@@ -1,11 +1,12 @@
-CREATE DATABASE smarttravel;
+Drop DATABASE bustravel;
+CREATE DATABASE bustravel;
 
---@block
+-- @block
 create table Entreprise (
 idEn int primary key AUTO_INCREMENT,
 nomEn varchar(50) not null,
 img varchar(200));
---@block
+-- @block
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -17,7 +18,7 @@ CREATE TABLE users (
     fk_idEn INT,
     FOREIGN KEY (fk_idEn) REFERENCES Entreprise(idEn)
 );
---@block
+-- @block
 CREATE TRIGGER before_insert_users
 BEFORE INSERT ON users
 FOR EACH ROW
@@ -31,7 +32,7 @@ BEGIN
         SET MESSAGE_TEXT = 'Invalid data for the specified role.';
     END IF;
 END;
---@block
+-- @block
 
 CREATE TABLE Autobus (
   immat varchar(30) primary key ,
@@ -40,14 +41,14 @@ CREATE TABLE Autobus (
   fk_idEn int(11) not null,
  FOREIGN KEY (fk_idEn) REFERENCES Entreprise(idEn)
 ) ;
---@block
+-- @block
 create table route (
 idVil_dep int,
 idVil_arv int ,
 PRIMARY KEY (idVil_dep, idVil_arv),
 dist float not null,
 duree time not null);
---@block
+-- @block
 create table voyage(
 idVoy int  primary key AUTO_INCREMENT,
 hr_dep time not null,
@@ -58,11 +59,11 @@ FOREIGN KEY (fk_idVil_dep, fk_idVil_arv) REFERENCES route(idVil_dep, idVil_arv),
 prix float not null,
 date_voy date not null);
 
---@block
+-- @block
 create table points (
 idPnts int primary key AUTO_INCREMENT,
 nbrPnts int not null);
---@block
+-- @block
 create table reservation (
 idRes int primary key AUTO_INCREMENT,
 fk_email VARCHAR(255) not null,
@@ -73,7 +74,7 @@ fk_idPnts int unique not null,
 FOREIGN KEY (fk_idPnts) REFERENCES points(idPnts),
 num_sieg int not null,
 date_res DATETIME);
---@block
+-- @block
 create table notification (
 idNot int primary key auto increment,
 fk_idRes int not null,
