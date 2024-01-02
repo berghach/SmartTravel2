@@ -9,32 +9,32 @@ class CompanyDAO{
     }
 
     public function get_companys(){
-        $query = "SELECT * FROM entreprise";
+        $query = "SELECT * FROM Entreprise";
         $stmt = $this->db->query($query);
         $stmt -> execute();
         $companysData = $stmt->fetchAll();
         $companys = array();
         foreach ($companysData as $B) {
-            $companys[] = new company($B["id"],$B["name"],$B["image"]);
+            $companys[] = new company($B["idEn"],$B["nomEn"],$B["img"]);
         }
         return $companys;
 
     }
 
     public function update_company($company){
-        $query = "UPDATE `company` SET `name`='".$company->getname()."',`image`='".$company->getimage()."' where `id`='".$company->getid()."'";
+        $query = "UPDATE Entreprise SET nomEn='".$company->getname()."',img = '".$company->getimage()."' where idEn='".$company->getid()."'";
         // echo $query;
         $stmt = $this->db->query($query);
         $stmt -> execute();
     }
 
     function getcompanyByID($id) {
-        $query = "SELECT * FROM company where id = $id";
+        $query = "SELECT * FROM Entreprise where idEn = $id";
         $stmt = $this->db->query($query);
         $stmt -> execute();
         $B = $stmt->fetch();
      
-            $company = new company($B["id"],$B["name"],$B["image"]);
+            $company = new company($B["idEn"],$B["nomEn"],$B["img"]);
         
         return $company;
           
