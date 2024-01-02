@@ -35,11 +35,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <h2>About Us</h2>
-                        <div class="bt-option">
-                            <a href="./index.html">Home</a>
-                            <span>About Us</span>
-                        </div>
+                        <h2>Operator Pannel</h2>
+                        
                     </div>
                 </div>
             </div>
@@ -48,7 +45,7 @@
     <!-- Breadcrumb Section End -->
 
     <!-- About Us Page Section Begin -->
-    <section class="aboutus-page-section spad">
+    <!-- <section class="aboutus-page-section spad">
         <div class="container">
             <div class="about-page-text">
                 <div class="row">
@@ -97,11 +94,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- About Us Page Section End -->
 
     <!-- Video Section Begin -->
-    <section class="video-section set-bg" data-setbg="img/video-bg.jpg">
+    <!-- <section class="video-section set-bg" data-setbg="img/video-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -114,54 +111,147 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Video Section End -->
 
     <!-- Gallery Section Begin -->
-    <section class="gallery-section spad">
+    <!-- <section class="gallery-section spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Gallery</span>
-                        <h2>Discover Our Work</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-6">
-                    <div class="gallery-item set-bg" data-setbg="img/gallery/gallery-1.jpg">
+                    <div class="gallery-item set-bg" data-setbg="img/bus.webp">
                         <div class="gi-text">
-                            <h3>Room Luxury</h3>
+                            <h3><a href="">Bus</a></h3>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="gallery-item set-bg" data-setbg="img/gallery/gallery-3.jpg">
-                                <div class="gi-text">
-                                    <h3>Room Luxury</h3>
-                                </div>
+                            <div class="gallery-item set-bg" d>
+                                
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="gallery-item set-bg" data-setbg="img/gallery/gallery-4.jpg">
+                            <div class="gallery-item set-bg" data-setbg="img/travel.jpg">
                                 <div class="gi-text">
-                                    <h3>Room Luxury</h3>
+                                    <h3><a href="">Travel</a></h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="gallery-item large-item set-bg" data-setbg="img/gallery/gallery-2.jpg">
+                    <div class="gallery-item large-item set-bg" data-setbg="img/traveler.jpg">
                         <div class="gi-text">
-                            <h3>Room Luxury</h3>
+                            <h3><a href="">Client List</a></h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+
+
+<div>
+    <h3>Client List</h3>
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="mt-5">
+<h3>Bus</h3>
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="mt-5">
+<h3>Travel</h3>
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
     <!-- Gallery Section End -->
 
     <!-- Footer Section Begin -->
@@ -221,9 +311,6 @@
                         </ul>
                     </div>
                     <div class="col-lg-5">
-                        <div class="co-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                     </div>
                 </div>
             </div>
