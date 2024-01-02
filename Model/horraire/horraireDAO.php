@@ -8,7 +8,7 @@ class horraireDAO{
     }
 
     public function get_horraires(){
-        $query = "SELECT * FROM horraire";
+        $query = "SELECT * FROM voyage";
         $stmt = $this->db->query($query);
         $stmt -> execute();
         $horrairesData = $stmt->fetchAll();

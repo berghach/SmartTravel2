@@ -8,7 +8,7 @@ class BUSDAO{
     }
 
     public function get_BUSs(){
-        $query = "SELECT * FROM BUS";
+        $query = "SELECT * FROM autobus";
         $stmt = $this->db->query($query);
         $stmt -> execute();
         $BUSsData = $stmt->fetchAll();

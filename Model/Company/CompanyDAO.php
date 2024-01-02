@@ -9,7 +9,7 @@ class CompanyDAO{
     }
 
     public function get_companys(){
-        $query = "SELECT * FROM company";
+        $query = "SELECT * FROM entreprise";
         $stmt = $this->db->query($query);
         $stmt -> execute();
         $companysData = $stmt->fetchAll();

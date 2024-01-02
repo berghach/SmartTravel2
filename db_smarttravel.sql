@@ -75,7 +75,7 @@ num_sieg int not null,
 date_res DATETIME);
 --@block
 create table notification (
-idNot int primary key auto increment,
+idNot int primary key auto_increment,
 fk_idRes int not null,
 FOREIGN KEY (fk_idRes) REFERENCES reservation(idRes),
 msg varchar(100) not null);
