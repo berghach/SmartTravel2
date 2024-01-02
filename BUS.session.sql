@@ -1,4 +1,5 @@
-CREAT DATABASE bustravel;
+DROP DATABASE bustravel;
+CREATE DATABASE bustravel;
 USE bustravel; 
 
 
