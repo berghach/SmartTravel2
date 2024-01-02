@@ -1,6 +1,5 @@
 CREATE DATABASE smarttravel;
 --@block
-
 CREATE TABLE city(
     city_name VARCHAR(30),
     PRIMARY KEY(city_name)
@@ -266,4 +265,19 @@ idNot int primary key AUTO_INCREMENT,
 fk_idRes int not null,
 FOREIGN KEY (fk_idRes) REFERENCES reservation(idRes),
 msg varchar(100) not null);
+
+
+-- @block
+INSERT INTO Entreprise (nomEn, img) VALUES
+('CTM', 'ctm_logo.png'),
+('Sahara Voyages', 'sahara_voyages_logo.png'),
+('Atlas Express', 'atlas_express_logo.png'),
+('Marrakech Tours', 'marrakech_tours_logo.jpeg'),
+('Moroccan Explorer', 'moroccan_explorer_logo.png'),
+('Maghreb Adventures', 'maghreb_adventures_logo.png'),
+('Golden Dunes Tours', 'golden_dunes_tours_logo.png'),
+('Casablanca Shuttles', 'casablanca_shuttles_logo.png'),
+('Rif Explorers', 'rif_explorers_logo.png'),
+('Atlas Trekking', 'atlas_trekking_logo.png');
+
 
