@@ -1,6 +1,6 @@
 <?php
 
-include("connection\connexion.php");
+
 
 class Points {
     private $idPnts;
