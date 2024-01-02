@@ -1,5 +1,7 @@
-Drop DATABASE bustravel;
-CREATE DATABASE bustravel;
+
+
+Drop DATABASE smarttravel;
+CREATE DATABASE smarttravel;
 
 -- @block
 create table Entreprise (

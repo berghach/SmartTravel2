@@ -9,6 +9,11 @@
         private $Prix;
         private $nhar;
         private $tri9;
+        private $imagecompany;
+        private $citynamedepart;
+        private $citynamearrive;
+        
+        
 
         public function __construct($hr_dep, $hr_arv,$Prix,$nhar,$tri9
         ){
@@ -60,6 +65,66 @@
         public function getTri9()
         {
                 return $this->tri9;
+        }
+
+        /**
+         * Get the value of imagecompany
+         */ 
+        public function getImagecompany()
+        {
+                return $this->imagecompany;
+        }
+
+        /**
+         * Set the value of imagecompany
+         *
+         * @return  self
+         */ 
+        public function setImagecompany($imagecompany)
+        {
+                $this->imagecompany = $imagecompany;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of citynamedepart
+         */ 
+        public function getCitynamedepart()
+        {
+                return $this->citynamedepart;
+        }
+
+        /**
+         * Set the value of citynamedepart
+         *
+         * @return  self
+         */ 
+        public function setCitynamedepart($citynamedepart)
+        {
+                $this->citynamedepart = $citynamedepart;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of citynamearrive
+         */ 
+        public function getCitynamearrive()
+        {
+                return $this->citynamearrive;
+        }
+
+        /**
+         * Set the value of citynamearrive
+         *
+         * @return  self
+         */ 
+        public function setCitynamearrive($citynamearrive)
+        {
+                $this->citynamearrive = $citynamearrive;
+
+                return $this;
         }
     }
 ?>
