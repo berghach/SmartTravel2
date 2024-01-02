@@ -24,7 +24,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "brief10",
-            "database": "smarttravel",
+            "database": "smarttravel10",
             "username": "root",
             "password": ""
         }

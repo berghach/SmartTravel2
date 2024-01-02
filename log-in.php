@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-<body>
-  <section class="vh-110" style="background-color:#dfa974;">
+<body style="background-color:#dfa974;">
+  <section class="vh-110">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
@@ -33,7 +33,7 @@
 
                 
 
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                  <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h3>
 
                   <div class="form-outline mb-4">
                     <input type="email" name = "email" id="form2Example17" class="form-control form-control-lg" />
@@ -50,7 +50,7 @@
                   </div>
 
                   <a class="small text-muted" href="#!">Forgot password?</a>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="sign-up.php"
                       style="color: #393f81;">Register here</a></p>
                   <a href="#!" class="small text-muted">Terms of use.</a>
                   <a href="#!" class="small text-muted">Privacy policy</a>
