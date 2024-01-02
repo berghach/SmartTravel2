@@ -1,5 +1,5 @@
 <?php
-require_once 'Model\connexion.php';
+
 require_once 'Model\horraire\modelhorraire.php';
 class horraireDAO{
     private $db;
