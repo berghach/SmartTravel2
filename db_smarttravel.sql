@@ -1,10 +1,91 @@
 CREATE DATABASE smarttravel;
+--@block
+
+CREATE TABLE city(
+    city_name VARCHAR(30),
+    PRIMARY KEY(city_name)
+);
+--@block
+INSERT INTO city (city_name) VALUES
+('Casablanca'),
+('Fez'),
+('Tangier'),
+('Marrakesh'),
+('Salé'),
+('Meknes'),
+('Rabat'),
+('Oujda'),
+('Kenitra'),
+('Agadir'),
+('Tetouan'),
+('Temara'),
+('Safi'),
+('Mohammedia'),
+('Khouribga'),
+('El Jadida'),
+('Beni Mellal'),
+('Aït Melloul'),
+('Nador'),
+('Dar Bouazza'),
+('Settat'),
+('Berrechid'),
+('Khemisset'),
+('Inezgane'),
+('Ksar El Kebir'),
+('Larache'),
+('Guelmim'),
+('Khenifra'),
+('Berkane'),
+('Taourirt'),
+('Bouskoura'),
+('Fquih Ben Salah'),
+('Dcheira El Jihadia'),
+('Oued Zem'),
+('El Kelaa Des Sraghna'),
+('Sidi Slimane'),
+('Errachidia'),
+('Guercif'),
+('Oulad Teima'),
+('Ben Guerir'),
+('Tifelt'),
+('Lqliaa'),
+('Taroudant'),
+('Sefrou'),
+('Essaouira'),
+('Fnideq'),
+('Sidi Kacem'),
+('Tiznit'),
+('Tan-Tan'),
+('Ouarzazate'),
+('Souk El Arbaa'),
+('Youssoufia'),
+('Lahraouyine'),
+('Martil'),
+('Ain Harrouda'),
+('Suq as-Sabt Awlad an-Nama'),
+('Skhirat'),
+('Ouazzane'),
+('Benslimane'),
+('Al Hoceima'),
+('Beni Ansar'),
+('Mdieq'),
+('Sidi Bennour'),
+('Midelt'),
+('Azrou'),
+('Drargua');
 
 --@block
 create table Entreprise (
 idEn int primary key AUTO_INCREMENT,
 nomEn varchar(50) not null,
 img varchar(200));
+--@block
+INSERT INTO Entreprise (nomEn, img) VALUES
+('Supra','Supratours.png'),
+('CTM', 'ctm.png'),
+('SATAS', 'SATAS.jpg'),
+('Afriquia', 'Afriquia_Gaz.png'),
+('Ghazala', 'ghazala.png');
 --@block
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -41,6 +122,8 @@ CREATE TABLE Autobus (
   fk_idEn int(11) not null,
  FOREIGN KEY (fk_idEn) REFERENCES Entreprise(idEn)
 ) ;
+--@block
+
 --@block
 create table route (
 idVil_dep int,
@@ -89,7 +172,7 @@ BEGIN
 END; 
 --@block
 create table notification (
-idNot int primary key auto increment,
+idNot int primary key AUTO_INCREMENT,
 fk_idRes int not null,
 FOREIGN KEY (fk_idRes) REFERENCES reservation(idRes),
 msg varchar(100) not null);
