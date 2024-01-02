@@ -55,13 +55,13 @@
                     </ul>
                 </div>
             </div>
-            <a href="#" class="bk-btn">Booking Now</a>
+            <a href="rooms.php" class="bk-btn">Booking Now</a>
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="rooms.php">Rooms</a></li>
-                <li><a href="about-us.php">About Us</a></li>
+                <li class="active"><a href="home.php">Home</a></li>
+                <li><a href="rooms.php">Reservation</a></li>
+                <li><a href="about-us.php">Gérer mon ticket</a></li>
                 <li><a href="./pages.html">Pages</a>
                     <ul class="dropdown">
                         <li><a href="./room-details.html">Room Details</a></li>
@@ -107,7 +107,7 @@
                                 <a href="#"><i class="fa fa-tripadvisor"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
-                            <a href="#" class="bk-btn">Booking Now</a>
+                            <a href="rooms.php" class="bk-btn">Booking Now</a>
                             <div class="language-option">
                                 <img src="img/flag.jpg" alt="">
                                 <span>EN <i class="fa fa-angle-down"></i></span>
@@ -128,7 +128,7 @@
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="home.php">
                                 <!-- <img src="img/logo.png" alt=""> -->
                                 <h4>Smart Travel</h4>
                             </a>
@@ -138,9 +138,9 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="rooms.php">Rooms</a></li>
-                                    <li><a href="about-us.php">About Us</a></li>
+                                    <li class="active"><a href="home.php">Home</a></li>
+                                    <li><a href="rooms.php">Réservation</a></li>
+                                    <li><a href="about-us.php">Gérer mon ticket</a></li>
                                     <li><a href="./pages.html">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="room-details.php">Room Details</a></li>
@@ -270,54 +270,48 @@
                     <div class="service-item">
                         <!-- <i class="flaticon-036-parking"></i> -->
                         <img src="assets/imgs/ctm.jpg" alt="">
-                        <h4>Travel Plan</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>CTM</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-033-dinner"></i> -->
                         <img src="assets/imgs/PullmanDuSud.jpg" alt="">
-                        <h4>Catering Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Pullman Du Sud</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-026-bed"></i> -->
                         <img src="assets/imgs/BabSalama.jpg" alt="">
-                        <h4>Babysitting</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Bab Salama</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-024-towel"></i> -->
                         <img src="assets/imgs/ghazala.jpg" alt="">
-                        <h4>Laundry</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Ghazala</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-044-clock-1"></i> -->
                         <img src="assets/imgs/Supratours.jpg" alt="">
-                        <h4>Hire Driver</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Supratours</h4>
+                       
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-012-cocktail"></i> -->
                         <img src="assets/imgs/taj.jpg" alt="">
-                        <h4>Bar & Drink</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Taj</h4>
+                       
                     </div>
                 </div>
             </div>
@@ -459,7 +453,7 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <span>Testimonials</span>
-                        <h2>What Customers Say?</h2>
+                        <h2>What our customers say!</h2>
                     </div>
                 </div>
             </div>
@@ -467,10 +461,7 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="testimonial-slider owl-carousel">
                         <div class="ts-item">
-                            <p>After a construction project took longer than expected, my husband, my daughter and I
-                                needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-                                city, neighborhood and the types of housing options available and absolutely love our
-                                vacation at Sona Hotel.</p>
+                            <p>The truth must be stated. I booked my ticket through the app, was called half an hour before the flight, arrived at the station, boarded the bus and sat in my reserved seat. This was my first experience with this service, and I will definitely repeat it. I recommend this service.</p>
                             <div class="ti-author">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -479,15 +470,12 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star-half_alt"></i>
                                 </div>
-                                <h5> - Alexander Vasquez</h5>
+                                <h5> - M.Hassan</h5>
                             </div>
                             <img src="img/testimonial-logo.png" alt="">
                         </div>
                         <div class="ts-item">
-                            <p>After a construction project took longer than expected, my husband, my daughter and I
-                                needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-                                city, neighborhood and the types of housing options available and absolutely love our
-                                vacation at Sona Hotel.</p>
+                            <p>The truth must be stated. I booked my ticket through the app, was called half an hour before the flight, arrived at the station, boarded the bus and sat in my reserved seat. This was my first experience with this service, and I will definitely repeat it. I recommend this service.</p>
                             <div class="ti-author">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -496,7 +484,7 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star-half_alt"></i>
                                 </div>
-                                <h5> - Alexander Vasquez</h5>
+                                <h5> - L.Issam</h5>
                             </div>
                             <img src="img/testimonial-logo.png" alt="">
                         </div>
@@ -514,53 +502,43 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <span>Destinations</span>
-                        <h2>Most Popular Routes</h2>
+                        <h2>Most popular routes</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-1.jpg">
+                    <div class="blog-item set-bg" data-setbg="assets/imgs/mosque.jpg">
                         <div class="bi-text">
-                            <span class="b-tag">Travel Trip</span>
-                            <h4><a href="#">Tremblant In Canada</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                            <h4><a href="#">Rabat vers Casablanca</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-2.jpg">
+                    <div class="blog-item set-bg" data-setbg="assets/imgs/Tanger.png">
                         <div class="bi-text">
-                            <span class="b-tag">Camping</span>
-                            <h4><a href="#">Choosing A Static Caravan</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                            <h4><a href="#">Rabat vers Tanger</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-3.jpg">
+                    <div class="blog-item set-bg" data-setbg="assets/imgs/fez.webp">
                         <div class="bi-text">
-                            <span class="b-tag">Event</span>
-                            <h4><a href="#">Copper Canyon</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
+                            <h4><a href="#">Casablanca vers Fes</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="blog-item small-size set-bg" data-setbg="img/blog/blog-wide.jpg">
+                    <div class="blog-item small-size set-bg" data-setbg="assets/imgs/marrakesh.jpg">
                         <div class="bi-text">
-                            <span class="b-tag">Event</span>
-                            <h4><a href="#">Trip To Iqaluit In Nunavut A Canadian Arctic City</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 08th April, 2019</div>
+                            <h4><a href="#">Casablanca vers Marrakesh</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="blog-item small-size set-bg" data-setbg="img/blog/blog-10.jpg">
+                    <div class="blog-item small-size set-bg" data-setbg="assets/imgs/kenitra.jpg">
                         <div class="bi-text">
-                            <span class="b-tag">Travel</span>
-                            <h4><a href="#">Traveling To Barcelona</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 12th April, 2019</div>
+                            <h4><a href="#">Tanger vers Kénétrat</a></h4>
                         </div>
                     </div>
                 </div>

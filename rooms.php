@@ -59,7 +59,7 @@
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
+                <li class="active"><a href="home.php">Home</a></li>
                 <li><a href="rooms.php">Rooms</a></li>
                 <li><a href=".about-us.php">About Us</a></li>
                 <li><a href="./pages.html">Pages</a>
@@ -129,7 +129,7 @@
                     <div class="col-lg-2">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                            <h4>Smart Travel</h4>    
                             </a>
                         </div>
                     </div>
@@ -137,7 +137,7 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li><a href="./index.html">Home</a></li>
+                                    <li><a href="home.php">Home</a></li>
                                     <li class="active"><a href="rooms.php">Rooms</a></li>
                                     <li><a href="about-us.php">About Us</a></li>
                                     <li><a href="./pages.html">Pages</a>
@@ -148,8 +148,8 @@
                                             <li><a href="#">Premium Room</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./blog.html">News</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li><a href="blog.php">News</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">
@@ -171,7 +171,7 @@
                     <div class="breadcrumb-text">
                         <h2>Our Rooms</h2>
                         <div class="bt-option">
-                            <a href="./home.html">Home</a>
+                            <a href="home.php">Home</a>
                             <span>Rooms</span>
                         </div>
                     </div>
