@@ -1,7 +1,5 @@
 <?php
 
-include("connection\connexion.php");
-
 class Reservation {
     private $id;
     private $siege_num;
