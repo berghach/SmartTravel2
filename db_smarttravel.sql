@@ -178,7 +178,8 @@ create table route (
 idVil_dep VARCHAR(50),
 idVil_arv VARCHAR(50) ,
 PRIMARY KEY (idVil_dep, idVil_arv),
-FOREIGN KEY (idVil_dep, idVil_arv) REFERENCES city(city_name),
+FOREIGN KEY (idVil_dep) REFERENCES city(city_name),
+FOREIGN KEY (idVil_arv) REFERENCES city(city_name),
 dist float not null,
 duree time not null);
 --@block
