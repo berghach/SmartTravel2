@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Model\Notification\ModelNotification.php';
-class horraireDAO{
+class NotificationDAO{
     private $db;
     public function __construct(){
         $this->db = Database::getInstance()->getConnection(); 
@@ -14,4 +14,14 @@ class horraireDAO{
         $stmt = $this->db->prepare($sql);
         $stmt->execute(array($message));
     }
+    public function display_notification_for_admins() {
+        $sql = "SELECT msg FROM `notification` WHERE user.role = 1";
+        
+        
+    }
+    public function display_notification_for_users(){
+
+
+    }
+        
 }

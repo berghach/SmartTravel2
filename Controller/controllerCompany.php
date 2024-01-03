@@ -10,6 +10,10 @@ require_once 'connection\connexion.php';
 
 
 class controller_users{
+    private $db;
+    public function __construct(){
+        $this->db = Database::getInstance()->getConnection(); 
+    }
     function getusers()  {
         
         $userDAO = new userDAO() ;
@@ -255,4 +259,12 @@ class contoller_Citys {
         include "View\CityForm.php" ; 
     }
  
+}
+
+class Notification {
+
+    function getnotificationforadmin(){
+        $NotifDAO = new NotificationDAO();
+        $Notifs = $NotifDAO->add_notification_for_admins();
+    }
 }

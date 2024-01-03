@@ -1,6 +1,6 @@
-DROP DATABASE bustravel;
-CREATE DATABASE bustravel;
-USE bustravel; 
+DROP DATABASE smarttravel10;
+CREATE DATABASE smarttravel10;
+USE smarttravel10; 
 
 
 

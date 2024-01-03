@@ -1,19 +1,6 @@
 {
     "sqltools.connections": [
-        {
-            "mysqlOptions": {
-                "authProtocol": "default",
-                "enableSsl": "Disabled"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
-            "driver": "MySQL",
-            "name": "BUS",
-            "database": "bustravel",
-            "username": "root",
-            "askForPassword": false
-        },
+        
         {
             "mysqlOptions": {
                 "authProtocol": "default",
@@ -24,7 +11,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "brief10",
-            "database": "smarttravel10",
+            "database": "smarttravel",
             "username": "root",
             "password": ""
         }

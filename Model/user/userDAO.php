@@ -25,12 +25,13 @@ class userDAO{
     public function ajout_operateur($user) {
         $type = $user->getRole();
         if ($type == "admin") {
-            $query = "INSERT INTO users (name, email, password, role, is_active, date_register) VALUES (
+
+            $query = "INSERT INTO users (name, email, password, role) VALUES (
                 '" . $user->getName() . "' ,
                 '" . $user->getEmail() . "',
                 '" . $user->getpassword() . "' ,
-                '" . $user->getRole() . "' ,
-                NULL , NULL 
+                '" . $user->getRole() . "' 
+                
             )";
         } elseif ($type == 'operateur') {
             $query = "INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES (
@@ -40,6 +41,15 @@ class userDAO{
                 '" . $user->getRole() . "' ,
                 1, NULL, '" . $user->getFkIdEn() . "'
             )";
+        } else{
+            $query = "INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES (
+                '" . $user->getName() . "' ,
+                '" . $user->getEmail() . "',
+                '" . $user->getpassword() . "' ,
+                '" . $user->getRole() . "' ,
+                1, '" . $user->getDate_register() . "',  NULL 
+            )";
+
         }
         
         $stmt = $this->db->prepare($query);
