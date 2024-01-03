@@ -1,6 +1,5 @@
 {
     "sqltools.connections": [
-        
         {
             "mysqlOptions": {
                 "authProtocol": "default",
@@ -13,7 +12,7 @@
             "name": "brief10",
             "database": "smarttravel",
             "username": "root",
-            "password": ""
+            "askForPassword": true
         }
     ]
 }
