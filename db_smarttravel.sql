@@ -1,10 +1,10 @@
 
 
-Drop DATABASE smarttravel;
-CREATE DATABASE smarttravel;
+-- Drop DATABASE smarttravel;
+-- CREATE DATABASE smarttravel;
 
 -- @block
-USE smarttravel;
+-- USE smarttravel;
 create table Entreprise (
 idEn int primary key AUTO_INCREMENT,
 nomEn varchar(50) not null,
