@@ -27,146 +27,11 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Offcanvas Menu Section Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="canvas-open">
-        <i class="icon_menu"></i>
-    </div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="canvas-close">
-            <i class="icon_close"></i>
-        </div>
-        <div class="search-icon  search-switch">
-            <i class="icon_search"></i>
-        </div>
-        <div class="header-configure-area">
-            <div class="language-option">
-                <img src="img/flag.jpg" alt="">
-                <span>EN <i class="fa fa-angle-down"></i></span>
-                <div class="flag-dropdown">
-                    <ul>
-                        <li><a href="#">Zi</a></li>
-                        <li><a href="#">Fr</a></li>
-                    </ul>
-                </div>
-            </div>
-            <a href="#" class="bk-btn">Booking Now</a>
-        </div>
-        <nav class="mainmenu mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="rooms.php">Rooms</a></li>
-                <li><a href="about-us.php">About Us</a></li>
-                <li><a href="./pages.html">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./room-details.html">Room Details</a></li>
-                        <li><a href="#">Deluxe Room</a></li>
-                        <li><a href="#">Family Room</a></li>
-                        <li><a href="#">Premium Room</a></li>
-                    </ul>
-                </li>
-                <li><a href="./blog.html">News</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="top-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-tripadvisor"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
-        <ul class="top-widget">
-            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-            <li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
-        </ul>
-    </div>
-    <!-- Offcanvas Menu Section End -->
-
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="top-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="tn-left">
-                            <li><i class="fa fa-phone"></i> (+212) 771652243</li>
-                            <li><i class="fa fa-envelope"></i> smart_travel@gmail.com</li>
-                        </ul>   
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="tn-right">
-                            <div class="top-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                            <a href="#" class="bk-btn">Booking Now</a>
-                            <div class="language-option">
-                                <img src="img/flag.jpg" alt="">
-                                <span>EN <i class="fa fa-angle-down"></i></span>
-                                <div class="flag-dropdown">
-                                    <ul>
-                                        <li><a href="#">Zi</a></li>
-                                        <li><a href="#">Fr</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="logo">
-                            <a href="./index.html">
-                                <!-- <img src="img/logo.png" alt=""> -->
-                                <h4>Smart Travel</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-10">
-                        <div class="nav-menu">
-                            <nav class="mainmenu">
-                                <ul>
-                                    <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="rooms.php">Rooms</a></li>
-                                    <li><a href="about-us.php">About Us</a></li>
-                                    <li><a href="./pages.html">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="room-details.php">Room Details</a></li>
-                                            <li><a href="blog-details.php">Blog Details</a></li>
-                                            <li><a href="#">Family Room</a></li>
-                                            <li><a href="#">Premium Room</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.php">News</a></li>
-                                    <li><a href="contact.php">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <div class="nav-right search-switch">
-                                <i class="icon_search"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header End -->
+<?php include 'nav.php' ?>
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
-        <div class="container">
+        <div class="container" style="margin-left: 10%;">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="hero-text">
@@ -176,38 +41,8 @@
                         <a href="#" class="primary-btn">Discover Now</a>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
-                    <div class="booking-form">
-                        <h3>Booking Your Bus</h3>
-                        <form action="process_booking.php" method="post">
-                            <div class="select-option">
-                                <label for="departure-city">Departure City:</label>
-                                <select id="departure-city" name="departure-city">
-                                </select>
-                            </div>
-                            <div class="select-option">
-                                <label for="destination-city">Destination City:</label>
-                                <select id="destination-city" name="destination-city">
-                                </select>
-                            </div>
-                            <div class="check-date">
-                                <label for="travel-date">Date of Travel:</label>
-                                <input type="text" class="date-input" id="travel-date" name="travel-date">
-                                <i class="icon_calendar"></i>
-                            </div>
-                            <div class="select-option">
-                                <label for="passengers">Travelers:</label>
-                                <select id="passengers" name="passengers">
-                                    <?php
-                                    for ($i = 1; $i <= 8; $i++) {
-                                        echo "<option value='$i'>$i Passenger" . ($i > 1 ? "s" : "") . "</option>";
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <button type="submit">search</button>
-                        </form>
-                    </div>
+                <div style="margin-left: 10%;">
+                <?php include 'search.php' ?>
                 </div>
             </div>
         </div>
@@ -270,54 +105,48 @@
                     <div class="service-item">
                         <!-- <i class="flaticon-036-parking"></i> -->
                         <img src="assets/imgs/ctm.jpg" alt="">
-                        <h4>Travel Plan</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>CTM</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-033-dinner"></i> -->
                         <img src="assets/imgs/PullmanDuSud.jpg" alt="">
-                        <h4>Catering Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Pullman Du Sud</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-026-bed"></i> -->
                         <img src="assets/imgs/BabSalama.jpg" alt="">
-                        <h4>Babysitting</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Bab Salama</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-024-towel"></i> -->
                         <img src="assets/imgs/ghazala.jpg" alt="">
-                        <h4>Laundry</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Ghazala</h4>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-044-clock-1"></i> -->
                         <img src="assets/imgs/Supratours.jpg" alt="">
-                        <h4>Hire Driver</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Supratours</h4>
+                       
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="service-item">
                         <!-- <i class="flaticon-012-cocktail"></i> -->
                         <img src="assets/imgs/taj.jpg" alt="">
-                        <h4>Bar & Drink</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna.</p>
+                        <h4>Taj</h4>
+                       
                     </div>
                 </div>
             </div>
@@ -459,7 +288,7 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <span>Testimonials</span>
-                        <h2>What Customers Say?</h2>
+                        <h2>What our customers say!</h2>
                     </div>
                 </div>
             </div>
@@ -467,10 +296,7 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="testimonial-slider owl-carousel">
                         <div class="ts-item">
-                            <p>After a construction project took longer than expected, my husband, my daughter and I
-                                needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-                                city, neighborhood and the types of housing options available and absolutely love our
-                                vacation at Sona Hotel.</p>
+                            <p>The truth must be stated. I booked my ticket through the app, was called half an hour before the flight, arrived at the station, boarded the bus and sat in my reserved seat. This was my first experience with this service, and I will definitely repeat it. I recommend this service.</p>
                             <div class="ti-author">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -479,15 +305,12 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star-half_alt"></i>
                                 </div>
-                                <h5> - Alexander Vasquez</h5>
+                                <h5> - M.Hassan</h5>
                             </div>
                             <img src="img/testimonial-logo.png" alt="">
                         </div>
                         <div class="ts-item">
-                            <p>After a construction project took longer than expected, my husband, my daughter and I
-                                needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-                                city, neighborhood and the types of housing options available and absolutely love our
-                                vacation at Sona Hotel.</p>
+                            <p>The truth must be stated. I booked my ticket through the app, was called half an hour before the flight, arrived at the station, boarded the bus and sat in my reserved seat. This was my first experience with this service, and I will definitely repeat it. I recommend this service.</p>
                             <div class="ti-author">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -496,7 +319,7 @@
                                     <i class="icon_star"></i>
                                     <i class="icon_star-half_alt"></i>
                                 </div>
-                                <h5> - Alexander Vasquez</h5>
+                                <h5> - L.Issam</h5>
                             </div>
                             <img src="img/testimonial-logo.png" alt="">
                         </div>
@@ -514,53 +337,43 @@
                 <div class="col-lg-12">
                     <div class="section-title">
                         <span>Destinations</span>
-                        <h2>Most Popular Routes</h2>
+                        <h2>Most popular routes</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-1.jpg">
+                    <div class="blog-item set-bg" data-setbg="assets/imgs/mosque.jpg">
                         <div class="bi-text">
-                            <span class="b-tag">Travel Trip</span>
-                            <h4><a href="#">Tremblant In Canada</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                            <h4><a href="#">Rabat vers Casablanca</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-2.jpg">
+                    <div class="blog-item set-bg" data-setbg="assets/imgs/Tanger.png">
                         <div class="bi-text">
-                            <span class="b-tag">Camping</span>
-                            <h4><a href="#">Choosing A Static Caravan</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                            <h4><a href="#">Rabat vers Tanger</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="blog-item set-bg" data-setbg="img/blog/blog-3.jpg">
+                    <div class="blog-item set-bg" data-setbg="assets/imgs/fez.webp">
                         <div class="bi-text">
-                            <span class="b-tag">Event</span>
-                            <h4><a href="#">Copper Canyon</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
+                            <h4><a href="#">Casablanca vers Fes</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <div class="blog-item small-size set-bg" data-setbg="img/blog/blog-wide.jpg">
+                    <div class="blog-item small-size set-bg" data-setbg="assets/imgs/marrakesh.jpg">
                         <div class="bi-text">
-                            <span class="b-tag">Event</span>
-                            <h4><a href="#">Trip To Iqaluit In Nunavut A Canadian Arctic City</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 08th April, 2019</div>
+                            <h4><a href="#">Casablanca vers Marrakesh</a></h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="blog-item small-size set-bg" data-setbg="img/blog/blog-10.jpg">
+                    <div class="blog-item small-size set-bg" data-setbg="assets/imgs/kenitra.jpg">
                         <div class="bi-text">
-                            <span class="b-tag">Travel</span>
-                            <h4><a href="#">Traveling To Barcelona</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 12th April, 2019</div>
+                            <h4><a href="#">Tanger vers Kénétrat</a></h4>
                         </div>
                     </div>
                 </div>

@@ -6,6 +6,6 @@ define('DB_NAME', 'smarttravel');
 
 define('DB_USER', 'root');
 
-define('DB_PASS', 'berg@1234');
+define('DB_PASS', '');
 
 ?>
