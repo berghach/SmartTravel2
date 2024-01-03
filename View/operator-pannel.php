@@ -151,107 +151,95 @@
     </section> -->
 
 
-<div>
-    <h3>Client List</h3>
-    <table class="table">
-  <thead class="thead-light">
+    <div>
+        
+    <h3>clients</h3>
+    <table class="table table-striped">
+  <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      
+      <th scope="col">immat</th>
+      <th scope="col">numéro de bus</th>
+      <th scope="col">Entreprise</th>
+      <th scope="col">capacité</th>
+      <th scope="col">modifier</th>
+      <th scope="col">annuler</th>
+
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
+ 
+      <td>sjdksdnsdn</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td><button type="button" class="btn btn-danger">modifier</button></td>
+      <td><button type="button" class="btn btn-danger">annuler</button></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+   
   </tbody>
-</table>
-</div>
+</table></div>
 
 <div class="mt-5">
+<h3>Travels</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th scope="col">immat</th>
+      <th scope="col">numéro de bus</th>
+      <th scope="col">Entreprise</th>
+      <th scope="col">capacité</th>
+      <th scope="col">modifier</th>
+      <th scope="col">annuler</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+ 
+      <td>sjdksdnsdn</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td><button type="button" class="btn btn-danger">modifier</button></td>
+      <td><button type="button" class="btn btn-danger">annuler</button></td>
+    </tr>
+   
+  </tbody>
+</table></div>
+
+<div class="mt-5 mb-5">
 <h3>Bus</h3>
-    <table class="table">
-  <thead class="thead-light">
+<table class="table table-striped">
+  <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-</div>
+      
+      <th scope="col">immat</th>
+      <th scope="col">numéro de bus</th>
+      <th scope="col">Entreprise</th>
+      <th scope="col">capacité</th>
+      <th scope="col">modifier</th>
+      <th scope="col">annuler</th>
 
-<div class="mt-5">
-<h3>Travel</h3>
-    <table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
+ 
+      <td>sjdksdnsdn</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td><button type="button" class="btn btn-danger">modifier</button></td>
+      <td><button type="button" class="btn btn-danger">annuler</button></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+   
   </tbody>
-</table>
-</div>
+</table></div>
+
+
     <!-- Gallery Section End -->
 
     <!-- Footer Section Begin -->

@@ -41,10 +41,6 @@
         {
                 return $this->image;
         }
-
-        /**
-         * Get the value of NumofPges
-         */ 
         
     }
 ?>

@@ -38,13 +38,6 @@
         }
 
         /**
-         * Get the value of capacite
-         */ 
-
-
-
-
-        /**
          * Get the value of company
          */ 
         public function getCompany()
