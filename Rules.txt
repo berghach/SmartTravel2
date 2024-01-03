@@ -1,0 +1,168 @@
+# Bus Reservation System - README
+
+## Description
+
+The Online Bus Reservation Application aims to provide users with a user-friendly interface for intuitively exploring and browsing bus schedules. The goal is to create a web application that is both aesthetically appealing and responsive, incorporating modern technologies to significantly enhance the user experience.
+
+## User Entities
+
+- **Client:**
+  - Defined by username, password, email, IsActive, registration date.
+- **Company Operator:**
+  - Defined by username, password, email, IsActive.
+- **Administrator:**
+  - Defined by username, password, email.
+- **Journey:**
+  - Defined by Source, Destination, Departure Time, Arrival Time, Price, Distance.
+- **Bus:**
+  - Defined by bus number, Imm, capacity.
+- **Route:**
+  - Defined by departure city, destination city, distance, duration.
+- **Reservation:**
+  - Defined by journey, user, seat number, reservation date.
+- **Client Points:**
+  - Defined by User, Points, Journey, Reservation.
+
+## Features
+
+### Visitor:
+
+#### Home Page:
+
+- Display featured routes and popular destinations.
+
+#### Quick Search Form:
+
+- Form allowing users to enter their travel details.
+
+#### Journey Overview:
+
+- View available journeys with details (source, destination, schedule, etc.).
+
+#### Journey Filtering:
+
+- Filter journeys based on various criteria (company, price, amenities, time intervals).
+
+#### Client Registration:
+
+- Sign up as a client with basic information.
+
+#### Reservation Process:
+
+- Intuitive reservation form for selecting routes, buses, and schedules with visualization of available seats.
+
+### Client:
+
+#### Dashboard:
+
+- Overview of upcoming journeys and reservations.
+
+#### Points System:
+
+- Accumulate points with each reservation based on duration, distance, price, and number of reservations.
+
+#### Reservation Management:
+
+- View, modify, or cancel existing reservations.
+
+#### QR Code Generation:
+
+- Integration with an API or library to generate unique QR codes for tickets.
+
+#### Notification System:
+
+- Receive notifications for updates on ongoing and past journeys.
+
+### Company Operator:
+
+#### Journey Management:
+
+- Add new journeys, edit existing information, enable/disable journeys.
+
+#### Bus Management:
+
+- Add new buses with capacity information, edit existing details, enable/disable buses.
+
+#### Notification System:
+
+- Send notifications to the administrator for any modification, receive notifications for approval or rejection.
+
+#### Client List:
+
+- Generate a list of clients who have booked a particular journey.
+
+#### QR Code Scanning:
+
+- Implement a QR code scanning feature to check client tickets.
+
+### Application Administrator:
+
+#### User Management:
+
+- Manage client accounts (create, edit, activate, deactivate), manage company operator accounts.
+
+#### Journey, Bus, and Route Management:
+
+- Add, edit, or disable journeys, buses, and routes; review and approve modifications made by operators.
+
+#### Reservation Management:
+
+- View, create, or cancel reservations; overview of reservations and their statuses.
+
+#### Notification System:
+
+- Receive notifications for changes made by operators, approve or reject these modifications.
+
+#### Client Management:
+
+- View client details, manage accounts, overview of points and client history.
+
+#### QR Code Generation and Validation:
+
+- Integration with an API or library for QR code generation and validation.
+
+## Additional Features:
+
+### Password Reset Mechanism:
+
+- Implement a secure password reset feature with email verification, ensuring a robust account recovery process.
+
+### Token-Based Authentication:
+
+- Enhance security with token-based authentication with a one-hour expiration for user sessions.
+
+### Data Security Measures:
+
+- Prioritize secure storage and retrieval of sensitive data, protecting user information.
+
+### Notification System:
+
+- Implement notifications for offers, messages, and updates.
+
+### JavaScript and Ajax Form Validation:
+
+- Enhance user interaction with JavaScript form validation, ensuring accurate inputs, and implement dynamic updates for search filters using Ajax, contributing to a smooth user experience.
+
+## Technologies Used:
+
+### Back-End:
+
+- PHP with Object-Oriented Programming (OOP) and follow the MVC model with routing for organized and scalable code.
+
+### Front-End:
+
+- Design an attractive and dynamic user interface using JavaScript, Tailwind/Bootstrap, SASS, CSS, HTML to ensure an optimal user experience.
+
+### QR Code:
+
+- Integrate with an appropriate library for QR code generation and validation, enhancing ticket security.
+
+### City API:
+
+- Integrate with an API for retrieving lists of Moroccan cities.
+
+## Pedagogical Modalities:
+
+- Individual work. Deadline: 6 days.
+- Brief assignment date: 28/12/2023 at 09:00.
+- Submission deadline: 04/01/2024 before 23:59.

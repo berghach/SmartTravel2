@@ -1,12 +1,27 @@
 <?php 
- include "Model\company\companyDAO.php" ;
+require_once 'connection\connexion.php';
+ include "Model\Company\CompanyDAO.php" ;
  include "Model\BUS\BUSDAO.php" ;
- include "Model\City\CityDAO.php" ;
+ include "Model\Points\pointDAO.php";
  include "Model\Route\RouteDAO.php" ;
  include "Model\horraire\horraireDAO.php" ;
+ include "Model\user\userDAO.php" ;
+ include "Model/Reservation/reservationDAO.php";
 
 
+class controller_users{
+    function getusers()  {
+        
+        $userDAO = new userDAO() ;
+        $users = $userDAO-> get_users();
+     
+        include "View\operateur_add.php" ; 
+        include "View\user.php" ; 
 
+     
+     
+        }
+}
 class contoller_companys {
 
     function getcompanys()  {
@@ -106,55 +121,6 @@ class contoller_BUSs {
     }
 }
 
-class contoller_Citys {
-
-    function getCitys()  {
-        
-   $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
-
-   include "View\City.php" ; 
-
-
-    }
-
-    function getCitysForm()  {
-        
-   $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
-
- return $Citys ;
-
-
-    }
-
-
-    function afficheform()  {
-        $id = "2345678901234"  ; 
-        $CityDAO = new CityDAO() ;
-        $City = $CityDAO->getCityByID($id) ;
-  
-        include "View\CityForm.php" ; 
-    }
- 
-
-
-    function setCitys()  {
-       $name = $_POST["name"] ; 
-       $capacite = $_POST["capacite"] ; 
-       $id = $_POST["id"] ; 
-       $company = $_POST["company"] ; 
-
-   $CityDAO = new CityDAO() ;
-   $City = new City(  $id  ,  $name) ;
-
-
-    $CityDAO->update_City($City);
-
-    include "View\CityForm.php"  ; 
-       
-    }
-}
 
 class contoller_Routes {
 
