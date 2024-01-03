@@ -11,6 +11,9 @@
         private $ville_arriv;
         private $prix;
         private $date_voy;
+
+
+
         public function __construct($idVoy,$hr_dep,$hr_arv,$ville_depart,$ville_arriv,$prix,$date_voy){
                 $this->idVoy = $idVoy;
                 $this->hr_dep = $hr_dep;
