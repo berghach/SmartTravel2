@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
     $newUser = new user($name, $email, $password, $role, $is_active, $date_register);
 
     // Call the ajout_operateur method to insert the new operator into the database
+    
     $userDAO = new userDAO();
     $userDAO->ajout_operateur($newUser);
 

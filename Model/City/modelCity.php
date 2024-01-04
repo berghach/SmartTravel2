@@ -3,18 +3,14 @@
 
 
  
-    class company{
+    class City{
         private $id;
         private $name;
-        private $image;
-       
 
-
-
-        public function __construct($id, $name, $image){
+        public function __construct($id, $name
+        ){
             $this->id = $id;
             $this->name = $name;
-            $this->image = $image;
 
         }
 
@@ -34,13 +30,6 @@
                 return $this->name;
         }
 
-        /**
-         * Get the value of image
-         */ 
-        public function getimage()
-        {
-                return $this->image;
-        }
-        
+
     }
 ?>

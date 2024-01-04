@@ -16,15 +16,14 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<section class="vh-110 bg-image"
-  style="background-image: url('assets/imgs/bus2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
+<section class="vh-110 bg-image" style="background-image: url('assets/imgs/bus2.jpg'); background-size:cover; background-position: center; ">
+  <div class="mask d-flex align-items-center gradient-custom-3">
+    <div class="container ">
+      <div class="row d-flex justify-content-center align-items-center ">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              <h2 class="text-uppercase text-center mb-5" >Create an account</h2>
 
               <form>
 
@@ -66,7 +65,7 @@
                 <br>
                 
                 <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body " style ="background-color:#dfa974;">Register</button>
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="log-in.php"
                     class="fw-bold text-body"><u>Login here</u></a></p>
 
               </form>

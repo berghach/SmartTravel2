@@ -1,14 +1,19 @@
 <?php 
 require_once 'connection\connexion.php';
- include "Model\company\companyDAO.php" ;
+ include "Model\Company\CompanyDAO.php" ;
  include "Model\BUS\BUSDAO.php" ;
-
+ include "Model\Points\pointDAO.php";
  include "Model\Route\RouteDAO.php" ;
  include "Model\horraire\horraireDAO.php" ;
  include "Model\user\userDAO.php" ;
+ include "Model/Reservation/reservationDAO.php";
 
 
 class controller_users{
+    private $db;
+    public function __construct(){
+        $this->db = Database::getInstance()->getConnection(); 
+    }
     function getusers()  {
         
         $userDAO = new userDAO() ;
@@ -213,12 +218,53 @@ class contoller_horraires {
        $tri9 = $_POST["tri9"] ; 
 
    $horraireDAO = new horraireDAO() ;
-   $horraire = new horraire(  $hr_dep, $hr_arv,$Prix,$nhar,$tri9) ;
+   $horraire = new horraire($hr_dep, $hr_arv,$Prix,$nhar,$tri9) ;
 
 
     $horraireDAO->update_horraire($horraire);
 
     include "View\horraireForm.php"  ; 
        
+    }
+}
+
+class contoller_Citys {
+
+    function getCitys()  {
+        
+   $CityDAO = new CityDAO() ;
+   $Citys = $CityDAO-> get_Citys();
+
+   include "View\City.php" ; 
+
+
+    }
+
+    function getCitysForm()  {
+        
+   $CityDAO = new CityDAO() ;
+   $Citys = $CityDAO-> get_Citys();
+
+ return $Citys ;
+
+
+    }
+
+
+    function afficheform()  {
+        $id = "2345678901234"  ; 
+        $CityDAO = new CityDAO() ;
+        $City = $CityDAO->getCityByID($id) ;
+  
+        include "View\CityForm.php" ; 
+    }
+ 
+}
+
+class Notification {
+
+    function getnotificationforadmin(){
+        $NotifDAO = new NotificationDAO();
+        $Notifs = $NotifDAO->add_notification_for_admins();
     }
 }

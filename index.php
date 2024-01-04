@@ -14,16 +14,16 @@ if (isset($_GET["action"])) {
         $contoller_companys->setcompanys() ;
     }
     if ($action === "companys") {
+        $contoller_companys->getcompanys() ;
 
+        $contoller_BUSs->getBUSs() ;
+        $contoller_Routes->getRoutes() ;
+        $contoller_horraires->gethorraires() ;
     }
 
 
 }else {
-    $contoller_companys->getcompanys() ;
-
-    $contoller_BUSs->getBUSs() ;
-    $contoller_Routes->getRoutes() ;
-    $contoller_horraires->gethorraires() ;
+    $contoller_users->getusers() ;
 }
 
 
