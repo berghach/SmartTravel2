@@ -16,7 +16,7 @@ class CityDAO{
         foreach ($CitysData as $B) {
             $Citys[] = new City($B["id"],$B["name"]);
         }
-return $Citys;
+        return $Citys;
 
     }
     // public function getCityNameById($id) {
@@ -32,14 +32,14 @@ return $Citys;
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-        
+    
         // Check if the query was successful
         if ($stmt->rowCount() > 0) {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result['name'];
         } else {
       
-            return "City Not Found";
+            return "City Not Found"; 
         }
     }
 
