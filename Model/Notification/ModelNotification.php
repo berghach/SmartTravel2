@@ -6,15 +6,15 @@
         private $id;
         private $message ;
         private $user_role;
-        private $foreingrol ; 
+        private $foreingresev ; 
 
 
 
-        public function __construct($id,$message,$user_role,$foreingrol){
+        public function __construct($id,$message,$user_role,$foreingresev){
             $this->id = $id;
             $this->message = $message;
             $this->user_role = $user_role;
-            $this->foreingrol = $foreingrol;
+            $this->foreingresev = $foreingresev;
 
     }
     
@@ -45,11 +45,12 @@
                 return $this->user_role;
         }
 
+
         /**
-         * Get the value of foreingrol
+         * Get the value of foreingresev
          */ 
-        public function getForeingrol()
+        public function getForeingresev()
         {
-                return $this->foreingrol;
+                return $this->foreingresev;
         }
     }
