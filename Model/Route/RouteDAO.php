@@ -14,7 +14,7 @@ class RouteDAO{
         $RoutesData = $stmt->fetchAll();
         $Routes = array();
         foreach ($RoutesData as $B) {
-            $Routes[] = new Route($B["id"],$B["depart_city"],$B["Arrive_city"],$B["duree"],$B["periode"]);
+            $Routes[] = new Route($B["idVil_dep"],$B["idVil_arv"],$B["dist"],$B["duree"]);
         }
         return $Routes;
 
