@@ -243,7 +243,7 @@ class contoller_Citys {
     function getCitys()  {
         
    $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
+   $Citys = $CityDAO-> getCities();
 
    include "View\City.php" ; 
 
@@ -253,7 +253,7 @@ class contoller_Citys {
     function getCitysForm()  {
         
    $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
+   $Citys = $CityDAO-> getCities();
 
  return $Citys ;
 
