@@ -2,7 +2,7 @@
 
 define('DB_HOST', 'localhost');
 
-define('DB_NAME', 'bustravel');
+define('DB_NAME', 'smarttravel');
 
 define('DB_USER', 'root');
 
