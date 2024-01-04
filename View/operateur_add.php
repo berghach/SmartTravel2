@@ -14,12 +14,16 @@
     <option value="operateur">Operateur</option>
     <option value="client">Client</option>
     <option value="unverified">Unverified</option>
-</select>
 
-<label for="is_active">Is Active:</label>
+    
+</select>
+<?php
+foreach ($horraires as $horraire) :
+?>
+<label for="is_active">Is <?php echo $horraire->getNameofthecompany(); ?>:</label>
 <input type="checkbox" name="is_active" value="1" checked>
 
-
+<?php endforeach ; ?>
 <input type="submit" name="submit" value="Add Operator">
 
 </form>

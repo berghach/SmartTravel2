@@ -39,10 +39,32 @@ class CompanyDAO{
         return $company;
           
     }
-
-
+    public function get_name_of_the_company($id){
+        $query = "SELECT nomEn from entreprise where idEn = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result['nomEn'];
+        } else {
+      
+            return "company name Not Found"; 
+        }
+    }
+    public function get_immage_of_the_company($id){
+        $query = "SELECT img from Entreprise where idEn = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        if ($stmt->rowCount() > 0) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result['img'];
+        } else {
+      
+            return "company image Not Found"; 
+        }
+    }
+    
 
 }
-
-
-
