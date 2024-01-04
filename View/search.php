@@ -5,6 +5,11 @@
                             <div class="select-option">
                                 <label for="departure-city">Departure City:</label>
                                 <select id="departure-city" name="departure-city">
+                                    <?php foreach($Cities as $city) :?>
+                                    <option value="<?php echo $city->getcity_name(); ?>">
+                                    <?php echo $city->getcity_name();?>
+                                    </option> 
+                                    <?php endforeach; ?>    
                                 </select>
                             </div>
                             <div class="select-option">

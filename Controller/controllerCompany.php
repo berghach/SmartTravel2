@@ -7,6 +7,8 @@ require_once 'connection\connexion.php';
  include "Model\horraire\horraireDAO.php" ;
  include "Model\user\userDAO.php" ;
  include "Model/Reservation/reservationDAO.php";
+include "Model/City/CityDAO.php";
+
 
 
 class controller_users{
@@ -183,11 +185,19 @@ class contoller_horraires {
         
    $horraireDAO = new horraireDAO() ;
    $horraires = $horraireDAO-> get_horraires();
-
-   include "View\horraire.php" ; 
+   $BUSDAO = new BUSDAO();
+   $companyDAO = new CompanyDAO();
+    $cityDAO = new CityDAO();
+   foreach ($horraires as $horraire){
+    $horraire->setNameofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+    $horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+   }
+   $Cities = $cityDAO->get_Citys();
+   include "View/rooms.php" ; 
 
 
     }
+    
 
     function gethorrairesForm()  {
         

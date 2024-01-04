@@ -59,34 +59,37 @@
 
 
     <!-- booking -->
+
     <section class="rooms-section spad">
         <div class="container">
             <div class="row">
+            <?php foreach($horraires as $horraire) : ?>
                 <div class="col-lg-4 col-md-6">
+                    
                     <div class="room-item">
                         <!-- tswira dyl ri7la -->
-                        <img src="img/room/room-1.jpg" alt="">
+                        <img src="assets/imgs/<?php echo $horraire->getImageofthecompany(); ?>" alt="">
                         <div class="ri-text">
 
                                 <!-- 3onwan dyl rihla     -->
-                            <h4>Premium King Room</h4>
+                            <h4><?php echo $horraire->getVille_depart(); ?> -> <?php echo $horraire->getVille_arriv(); ?></h4>
 
                             <!-- prix -->
-                            <h3>159dh<span>/PerPerson</span></h3>
+                            <h3><?php echo $horraire->getPrix(); ?> dh<span> /PerPerson</span></h3>
                             <table>
                                 <tbody>
                                     <!-- la bghiti tzid chi le3ba (informations) -->
                                     <tr>
-                                        <td class="r-o">Size:</td>
-                                        <td>30 ft</td>
+                                        <td class="r-o">Heures de depart:</td>
+                                        <td><?php echo $horraire->gethr_dep(); ?></td>
                                     </tr>
                                     <tr>
-                                        <td class="r-o">Capacity:</td>
-                                        <td>Max persion 3</td>
+                                        <td class="r-o">Heures d'arrive:</td>
+                                        <td><?php echo $horraire->gethr_arv(); ?></td>
                                     </tr>
                                     <tr>
-                                        <td class="r-o">Bed:</td>
-                                        <td>King Beds</td>
+                                        <td class="r-o">Date:</td>
+                                        <td><?php echo $horraire->getDate_voy(); ?></td>
                                     </tr>
                                     <tr>
                                         <td class="r-o">Services:</td>
@@ -100,6 +103,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endforeach ; ?>
                 
 
 
