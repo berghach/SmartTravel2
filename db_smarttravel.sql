@@ -1,8 +1,9 @@
+DROP DATABASE smarttravel;
 CREATE DATABASE smarttravel;
 --@block
+USE smarttravel;
 CREATE TABLE city(
-    city_name VARCHAR(30),
-    PRIMARY KEY(city_name)
+    city_name VARCHAR(30) PRIMARY KEY 
 );
 --@block
 INSERT INTO city (city_name) VALUES
@@ -208,20 +209,18 @@ FOREIGN KEY (bus) REFERENCES Autobus(immat),
 prix float not null,
 date_voy date not null);
 --@block
-INSERT INTO voyage (hr_dep, hr_arv, fk_idVil_dep, fk_idVil_arv, bus, prix, date_voy) VALUES
-('08:00:00', '12:00:00', 'Casablanca', 'Marrakesh', 'AB123', 200.0, '2024-02-15'),
-('09:30:00', '15:00:00', 'Fez', 'Tangier', 'CD456', 250.0, '2024-02-16'),
-('11:00:00', '18:30:00', 'Rabat', 'Agadir', 'EF789', 300.0, '2024-02-17'),
-('13:30:00', '18:00:00', 'Oujda', 'Kenitra', 'GH012', 180.0, '2024-02-18'),
-('10:45:00', '15:15:00', 'Meknes', 'Safi', 'IJ345', 220.0, '2024-02-19'),
-('12:15:00', '18:15:00', 'Tetouan', 'Temara', 'KL678', 280.0, '2024-02-20'),
-('15:00:00', '17:00:00', 'Settat', 'Berrechid', 'MN901', 100.0, '2024-02-21'),
-('14:30:00', '18:00:00', 'Khouribga', 'El Jadida', 'OP234', 150.0, '2024-02-22'),
-('16:45:00', '22:15:00', 'Bouskoura', 'Fquih Ben Salah', 'QR567', 200.0, '2024-02-23'),
-('18:00:00', '23:30:00', 'Dcheira El Jihadia', 'Oued Zem', 'ST890', 300.0, '2024-02-24'),
+SELECT DISTINCT bus
+FROM voyage
+WHERE bus NOT IN (SELECT bus FROM autobus);
 
-('08:30:00', '13:00:00', 'Casablanca', 'Fez', 'AB123', 180.0, '2024-03-01'),
-('10:00:00', '16:30:00', 'Tangier', 'Marrakesh', 'CD456', 220.0, '2024-03-02'),
+
+--@block
+INSERT INTO voyage (hr_dep, hr_arv, fk_idVil_dep, fk_idVil_arv, bus, prix, date_voy) VALUES
+
+
+
+
+
 ('12:30:00', '17:45:00', 'Rabat', 'Oujda', 'EF789', 260.0, '2024-03-03'),
 ('14:00:00', '19:30:00', 'Kenitra', 'Agadir', 'GH012', 320.0, '2024-03-04'),
 ('11:15:00', '14:45:00', 'Marrakesh', 'Tetouan', 'IJ345', 150.0, '2024-03-05'),
@@ -282,4 +281,21 @@ INSERT INTO Entreprise (nomEn, img) VALUES
 ('Rif Explorers', 'rif_explorers_logo.png'),
 ('Atlas Trekking', 'atlas_trekking_logo.png');
 
+-- @block
+UPDATE Entreprise
+SET img = CASE
+    WHEN idEn = 1 THEN 'ctm_logo.png'
+    WHEN idEn = 2 THEN 'sahara_voyages_logo.png'
+    WHEN idEn = 3 THEN 'atlas_express_logo.png'
+    WHEN idEn = 4 THEN 'marrakech_tours_logo.jpg'
+    WHEN idEn = 5 THEN 'moroccan_explorer_logo.png'
+    WHEN idEn = 6 THEN 'maghreb_adventures_logo.png'
+    WHEN idEn = 7 THEN 'golden_dunes_tours_logo.png'
+    WHEN idEn = 8 THEN 'casablanca_shuttles_logo.png'
+    WHEN idEn = 9 THEN 'rif_explorers_logo.png'
+    WHEN idEn = 10 THEN 'atlas_trekking_logo.png'
+    ELSE img
+END;
+-- @block
+SELECT fk_idEn from autobus where immat = "KL678"
 

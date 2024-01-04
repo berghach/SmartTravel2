@@ -4,30 +4,21 @@
 
  
     class City{
-        private $id;
-        private $name;
+        private $city_name;
 
-        public function __construct($id, $name
+        public function __construct( $city_name
         ){
-            $this->id = $id;
-            $this->name = $name;
+            $this->city_name = $city_name;
 
         }
 
-        /**
-         * Get the value of id
-         */ 
-        public function getid()
-        {
-                return $this->id;
-        }
 
         /**
-         * Get the value of name
+         * Get the value of city_name
          */ 
-        public function getname()
+        public function getcity_name()
         {
-                return $this->name;
+                return $this->city_name;
         }
 
 

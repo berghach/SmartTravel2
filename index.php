@@ -23,7 +23,9 @@ if (isset($_GET["action"])) {
 
 
 }else {
-    $contoller_users->getusers() ;
+    $contoller_horraires->gethorraires();
+    // include 'View/rooms.php';
+    // include 'View/search.php';
 }
 
 
