@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Model\Notification\ModelNotification.php';
+include'Model\user\userDAO.php';
 class NotificationDAO{
     private $db;
     public function __construct(){
