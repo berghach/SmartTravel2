@@ -1,6 +1,7 @@
 <?php 
 class user{
   
+    private $id;
     private $name;
     private $email ;
     private $password;
@@ -11,8 +12,9 @@ class user{
 
 
 
-    public function __construct( $name,$email , $password , $role,$is_active ,$date_register){
+    public function __construct($id, $name,$email , $password , $role,$is_active ,$date_register){
      
+        $this->id = $id;
         $this->name = $name;
         $this->password = $password;
         $this->email = $email;
@@ -22,6 +24,14 @@ class user{
 
     }
     
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Get the value of name
@@ -71,6 +81,8 @@ class user{
     {
         return $this->email;
     }
+
+
 }
 
 

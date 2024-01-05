@@ -6,7 +6,7 @@
 class SendMail{
 
 
-    public function resetPassword($to, $newPassword) {
+    public function resetPassword($to, $token) {
         try {
             require_once 'mail.php';
 
@@ -19,7 +19,7 @@ class SendMail{
             $mail->Body = "
                 <p>Hello,</p>
                 <p>We received a request to reset your password for your SmartTravel account. Your new password is:</p>
-                <p><strong>$newPassword</strong></p>
+                <p><strong>http://localhost/brief-10/reset-password.php?token=$token</strong></p>
                 <p>If you did not make this request, please ignore this email.</p>
                 <p>Thank you,<br>SmartTravel Support Team</p>
             ";
@@ -42,7 +42,7 @@ class SendMail{
 
 $sendMail = new sendMail();
 
-$sendMail->resetPassword("badreddynelhirch2@gmail.com", "12345689");
+$sendMail->resetPassword("badreddynelhirch2@gmail.com", "84646");
 
 
 

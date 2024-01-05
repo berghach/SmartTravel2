@@ -22,11 +22,19 @@ class controller_users{
         $users = $userDAO-> get_users();
 
         include "View\operateur_add.php" ; 
-        include "View\user.php" ; 
-
+        include "View\user.php" ;
 
 
         }
+
+
+    function getUsersForRestPassword() {
+        $userDAO = new userDAO() ;
+        $users = $userDAO-> get_users();
+        include "View\\reset-password-view.php" ;
+    }
+
+    
 }
 class contoller_companys {
 

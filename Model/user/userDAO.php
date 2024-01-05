@@ -15,7 +15,7 @@ class userDAO{
         $usersData = $stmt->fetchAll();
         $users = array();
         foreach ($usersData as $B) {
-            $users[] = new user($B["name"],$B["email"],$B["password"],$B["role"],$B["is_active"],$B["date_register"]);
+            $users[] = new user($B["id"],$B["name"],$B["email"],$B["password"],$B["role"],$B["is_active"],$B["date_register"]);
             
         }
         return $users;
