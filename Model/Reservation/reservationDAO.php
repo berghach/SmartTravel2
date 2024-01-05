@@ -30,9 +30,14 @@ class ReservationDAO {
         return $results;
 
     }
-    public function add_reservation($c2,$c3,$c4){
-        $query = "INSERT INTO T(C2,C3,C4) VALUE ($c2,$c3,$c4)";
+    public function add_reservation($num_siege,$fk_email,$fk_voy){
+        $query = "INSERT INTO T(num_sieg,fk_email,fk_idVoy) VALUE (:num_siege,:fk_email,:fk_idVoy)";
         $stmt = $this->db->query($query);
+       
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':num_siege', $num_siege, PDO::PARAM_INT); // Assuming $departcity is an integer, adjust accordingly
+            $stmt->bindParam(':fk_email', $fk_email, PDO::PARAM_STR); // Assuming $arrivecity is an integer, adjust accordingly
+            $stmt->bindParam(':fk_voy', $fk_voy, PDO::PARAM_INT); 
         $stmt -> execute();
     }
     public function cancel_reservation($c1){

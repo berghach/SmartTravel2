@@ -47,7 +47,7 @@ class horraireDAO{
             $formattedDatetime = date('Y-m-d', strtotime($datetime));
 
             // Prepare and execute the SQL query with parameterized statements
-            $query = "SELECT * FROM voyage WHERE fk_idVil_dep = :departcity and fk_idVil_arv  = :arrivecity AND date_voy > CURDATE() AND date_voy > :datetime";
+            $query = "SELECT * FROM voyage WHERE fk_idVil_dep = :departcity and fk_idVil_arv  = :arrivecity AND date_voy > CURDATE() AND date_voy = :datetime";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':departcity', $departcity, PDO::PARAM_STR); // Assuming $departcity is an integer, adjust accordingly
             $stmt->bindParam(':arrivecity', $arrivecity, PDO::PARAM_STR); // Assuming $arrivecity is an integer, adjust accordingly
@@ -77,7 +77,7 @@ class horraireDAO{
             $formattedDatetime = date('Y-m-d', strtotime($datetime));
 
             // Prepare and execute the SQL query with parameterized statements
-            $query = "SELECT * FROM voyage WHERE  date_voy > CURDATE() AND date_voy > :datetime";
+            $query = "SELECT * FROM voyage WHERE  date_voy > CURDATE() AND date_voy = :datetime";
             $stmt = $this->db->prepare($query);
 
             $stmt->bindParam(':datetime', $formattedDatetime, PDO::PARAM_STR); // Assuming $datetime is a string, adjust accordingly

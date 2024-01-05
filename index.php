@@ -9,6 +9,7 @@ $contoller_Routes = new contoller_route() ;
 $contoller_horraires = new contoller_horraires() ; 
 $controler_city = new contoller_Citys();
 $contoller_searshes = new Controller_searsh();
+$controller_reserve = new Controller_reservation();
 // include("View\home.php");
 session_start();
 if (isset($_GET["action"])) {
@@ -20,7 +21,7 @@ if (isset($_GET["action"])) {
     }
     if ($action === "reserve") {
         // $contoller_horraires->gethorraires($depart,$arrive) ;
-        $contoller_searshes->searsh() ;
+        $controller_reserve->searsh() ;
     }
 
     // Add condition to display travels
@@ -42,14 +43,14 @@ if (isset($_GET["action"])) {
 
 }
 
-if (isset($_GET["action"])) {
-    switch ($action) {
-        case 'showRoute':
-            $contoller_Routes->getRouteController();
-            break;
+// if (isset($_GET["action"])) {
+//     switch ($action) {
+//         case 'showRoute':
+//             $contoller_Routes->getRouteController();
+//             break;
 
-        }
-}else {
+//         }
+// }else {
 //     // $contoller_companys->getcompanys() ;
 //     $contoller_Routes->getRouteController();
 //     // $contoller_BUSs->getBUSs() ;
@@ -57,7 +58,7 @@ if (isset($_GET["action"])) {
 
 // include 'View/rooms.php';
     // $contoller_horraires->gethorraires() ;
-}
+// }
 
 
 
