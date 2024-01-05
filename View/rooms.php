@@ -69,7 +69,7 @@
         <div class="container">
 
             <form  class="row" method="post" action="index.php?action=find">
-            <?php foreach($horraires as $horraire) : ?>
+            <?php foreach($ggg as $horraire) : ?>
                 <div class="col-lg-4 col-md-6">
 
                     <div class="room-item">

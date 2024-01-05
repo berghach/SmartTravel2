@@ -185,13 +185,16 @@ class contoller_horraires {
 
    $horraireDAO = new horraireDAO() ;
    $horraires = $horraireDAO-> get_horraires();
+ 
    $BUSDAO = new BUSDAO();
    $companyDAO = new CompanyDAO();
     $cityDAO = new CityDAO();
    foreach ($horraires as $horraire){
     $horraire->setNameofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
     $horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+    // var_dump($horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus()))));
    }
+   
    $Cities = $cityDAO->getCities();
    include "View/rooms.php" ; 
 
@@ -220,7 +223,22 @@ class contoller_horraires {
 
 
 
-    
+    function sethorraires()  {
+       $hr_dep = $_POST["hr_dep"] ; 
+       $hr_arv = $_POST["hr_arv"] ; 
+       $Prix = $_POST["Prix"] ; 
+       $nhar = $_POST["nhar"] ; 
+       $tri9 = $_POST["tri9"] ; 
+
+   $horraireDAO = new horraireDAO() ;
+   $horraire = new horraire($hr_dep, $hr_arv,$Prix,$nhar,$tri9) ;
+
+
+    $horraireDAO->update_horraire($horraire);
+
+    include "View\horraireForm.php"  ; 
+
+    }
 }
 
 class contoller_Citys {

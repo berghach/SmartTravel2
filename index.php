@@ -37,7 +37,7 @@ if (isset($_GET["action"])) {
 
     $depart = '';
     $arrive = '';
-    $contoller_horraires->gethorraires($depart,$arrive) ;
+    $contoller_horraires->gethorraires() ;
 
 
 }
