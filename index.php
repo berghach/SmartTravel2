@@ -20,8 +20,10 @@ if (isset($_GET["action"])) {
         $contoller_searshes->searsh() ;
     }
     if ($action === "reserve") {
+        $capacities = $contoller_horraires->getplacesesbyidvoy(41);
+        include 'View/seats.php';
         // $contoller_horraires->gethorraires($depart,$arrive) ;
-        $controller_reserve->searsh() ;
+        $controller_reserve->add_reservation_controller() ;
     }
 
     // Add condition to display travels

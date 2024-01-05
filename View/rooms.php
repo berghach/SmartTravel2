@@ -68,7 +68,7 @@
     <section class="rooms-section spad">
         <div class="container">
 
-            <form  class="row" method="post" action="index.php?action=find">
+            <form  class="row" method="post" action="index.php?action=reserve">
             <?php foreach($horraires as $horraire) : ?>
                 <div class="col-lg-4 col-md-6">
 

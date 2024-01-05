@@ -201,6 +201,20 @@ class contoller_horraires {
 
     }
 
+    function getplacesesbyidvoy($idVoy){
+
+
+        $BusDAO = new BUSDAO();
+        $horraireDAO = new horraireDAO();
+        $horraire = $horraireDAO->gethorraireByID($idVoy);
+
+        $capacities = $BusDAO->get_capacity_of_Bus($horraire->getBus());
+        
+
+        return $capacities;
+
+    }
+
 
     function gethorrairesForm()  {
 
