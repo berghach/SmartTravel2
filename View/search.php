@@ -1,6 +1,6 @@
 <div class="booking-form">
                         <h3>Booking Your Bus</h3>
-                        <form method="post" action="index.php?action=reserve">
+                        <form method="post" action="index.php?action=find">
                             <div class="select-option">
                                 <label for="departure-city">Departure City:</label>
                                 <select name = "Depart_City"  class="selectpicker mh myDropDown" data-live-search="true">
@@ -10,7 +10,7 @@
                                     </option> 
                                     <?php endforeach; ?>    
                                 </select>
-
+                            </div>
                             <div class="select-option">
                                 <label for="destination-city">Destination City:</label>
                                 <select name = "Arrive_City"  >
