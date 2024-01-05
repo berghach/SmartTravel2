@@ -220,22 +220,7 @@ class contoller_horraires {
 
 
 
-    function sethorraires()  {
-       $hr_dep = $_POST["hr_dep"] ; 
-       $hr_arv = $_POST["hr_arv"] ; 
-       $Prix = $_POST["Prix"] ; 
-       $nhar = $_POST["nhar"] ; 
-       $tri9 = $_POST["tri9"] ; 
-
-   $horraireDAO = new horraireDAO() ;
-   $horraire = new horraire($hr_dep, $hr_arv,$Prix,$nhar,$tri9) ;
-
-
-    $horraireDAO->update_horraire($horraire);
-
-    include "View\horraireForm.php"  ; 
-
-    }
+    
 }
 
 class contoller_Citys {
