@@ -1,7 +1,7 @@
 <?php
 
-include "model\city\City.php";
-include "model\\city\\CityDAO.php";
+include "model\CityAPI\City.php";
+include "model\\CityAPI\\CityDAO.php";
 
 class CityController {
 
