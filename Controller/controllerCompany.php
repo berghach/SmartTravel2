@@ -276,9 +276,10 @@ class contoller_Citys {
 
 class Notification {
 
-    function getnotificationforadmin(){
+    function getnotificationforreserve(){
+        
         $NotifDAO = new NotificationDAO();
-        $Notifs = $NotifDAO->add_notification_for_admins();
+        $NotifDAO->add_notification_for_reservation($message,$idreservation,$reservationid);
     }
 }
 class Controller_searsh {

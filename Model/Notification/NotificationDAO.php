@@ -8,7 +8,7 @@ class NotificationDAO{
         $this->db = Database::getInstance()->getConnection(); 
     }
 
-    public function add_notification_for_admins($message,$idreservation) {
+    public function add_notification_for_reservation($message,$idreservation,$reservationid) {
         $sql = "INSERT INTO `notification` (user_role, fk_idRes , msg  )
         VAlUE ( 'admin' , ? , ?)";
         $stmt = $this->db->prepare($sql);
