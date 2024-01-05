@@ -69,7 +69,7 @@
         <div class="container">
 
             <form  class="row" method="post" action="index.php?action=find">
-            <?php foreach($ggg as $horraire) : ?>
+            <?php foreach($horraires as $horraire) : ?>
                 <div class="col-lg-4 col-md-6">
 
                     <div class="room-item">
@@ -99,7 +99,7 @@
                                     </tr>
                                     <tr>
                                         <td class="r-o">Capacity:</td>
-                                        <td><?php echo $BUSDAO->get_capacity_of_Bus($horraire->getBus()); ?></td>
+                                        <td><?php echo $BUSDAO->get_capacity_of_Bus($horraire->getBus());  ?></td>
                                     </tr>
                                 </tbody>
                             </table>
