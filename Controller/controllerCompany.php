@@ -185,13 +185,16 @@ class contoller_horraires {
 
    $horraireDAO = new horraireDAO() ;
    $horraires = $horraireDAO-> get_horraires();
+ 
    $BUSDAO = new BUSDAO();
    $companyDAO = new CompanyDAO();
     $cityDAO = new CityDAO();
    foreach ($horraires as $horraire){
     $horraire->setNameofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
     $horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+    // var_dump($horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus()))));
    }
+   
    $Cities = $cityDAO->getCities();
    include "View/rooms.php" ; 
 
