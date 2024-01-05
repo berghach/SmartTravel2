@@ -1,4 +1,23 @@
-  <div id="preloder">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<div id="preloder">
         <div class="loader"></div>
     </div>
 
@@ -59,7 +78,7 @@
     <!-- Offcanvas Menu Section End -->
 
     <!-- Header Section Begin -->
-    <header class="header-section header-normal">
+    <!-- <header class="header-section header-normal">
         <div class="top-nav">
             <div class="container">
                 <div class="row">
@@ -92,7 +111,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
         <div class="menu-item">
             <div class="container">
                 <div class="row">
@@ -120,7 +140,6 @@
                                     </li>
                                     <li><a href="blog.php">News</a></li>
                                     <li><a href="contact.php">Contact</a></li>
-                                    <a href="log-in.php" class="bk-btn" style="color:brown;">Login</a>
                                 </ul>
                             </nav>
                             <div class="nav-right search-switch">
@@ -133,3 +152,43 @@
         </div>
     </header>
     <!-- Header End -->
+    <div class="container mt-5">
+    <h2 class="mb-4">update the bus</h2>
+    <form>
+        <div class="mb-3">
+            <label for="productName" class="form-label">ID</label>
+            <input type="text" class="form-control"  placeholder="Enter the bus ID" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="productPrice" class="form-label">Name</label>
+            <input type="number" class="form-control"  placeholder="Enter the bus name" required>
+        </div>
+        <div class="mb-3">
+            <label for="productPrice" class="form-label">capacite</label>
+            <input type="number" class="form-control"  placeholder="Enter the bus capacite" required>
+        </div>
+        <div class="mb-3">
+            <label for="productCategory" class="form-label">entreprise</label>
+            <select class="form-select" id="productCategory" required>
+                <option value="" selected disabled>Select entreprise</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home & Garden</option>
+            </select>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@ class horraireDAO{
         $horrairesData = $stmt->fetchAll();
         $horraires = array();
         foreach ($horrairesData as $B) {
-            $horraires[] = new horraire($B["idVoy"], $B["hr_dep"],$B["hr_arv"],$B["fk_idVil_dep"],$B["fk_idVil_arv"],$B["prix"],$B["date_voy"]);
+            $horraires[] = new horraire($B["idVoy"], $B["hr_dep"],$B["hr_arv"],$B["fk_idVil_dep"],$B["fk_idVil_arv"],$B["prix"],$B["date_voy"],$B["bus"]);
         }
         return $horraires;
 
@@ -33,7 +33,7 @@ class horraireDAO{
         $stmt -> execute();
         $B = $stmt->fetch();
      
-            $horraire = new horraire($B["idVoy"], $B["hr_dep"],$B["hr_arv"],$B["fk_idVil_dep"],$B["fk_idVil_arv"],$B["prix"],$B["date_voy"]);
+            $horraire = new horraire($B["idVoy"], $B["hr_dep"],$B["hr_arv"],$B["fk_idVil_dep"],$B["fk_idVil_arv"],$B["prix"],$B["date_voy"],$B["bus"]);
         
         return $horraire;
           
