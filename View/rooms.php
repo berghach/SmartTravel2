@@ -27,6 +27,11 @@
 </head>
 
 <body>
+<style>
+  .btn.btn-outline-secondary {
+    border: none;
+  }
+</style>
   <?php include 'nav.php' ?>
 
     <!-- Breadcrumb Section Begin -->
@@ -62,10 +67,11 @@
 
     <section class="rooms-section spad">
         <div class="container">
-            <div class="row">
+
+            <form  class="row" method="post" action="index.php?action=reserve">
             <?php foreach($horraires as $horraire) : ?>
                 <div class="col-lg-4 col-md-6">
-                    
+
                     <div class="room-item">
                         <!-- tswira dyl ri7la -->
                         <img src="assets/imgs/<?php echo $horraire->getImageofthecompany(); ?>" alt="">
@@ -92,19 +98,19 @@
                                         <td><?php echo $horraire->getDate_voy(); ?></td>
                                     </tr>
                                     <tr>
-                                        <td class="r-o">Services:</td>
-                                        <td>Wifi, Television, Bathroom,...</td>
+                                        <td class="r-o">Capacity:</td>
+                                        <td><?php echo $BUSDAO->get_capacity_of_Bus($horraire->getBus());  ?></td>
                                     </tr>
                                 </tbody>
                             </table>
 
                             <!-- botona dyl reservation -->
-                            <a href="#" class="primary-btn">Booking Now</a>
+                            <button value="<?php echo $horraire->getIdVoy(); ?>" name="reservationid" class="btn btn-outline-secondary primary-btn"><a  class="primary-btn">Reserve Now</a></button>
                         </div>
                     </div>
                 </div>
                 <?php endforeach ; ?>
-                
+
 
 
 
@@ -117,7 +123,8 @@
                         <a href="#">Next <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
+                </form>
+
         </div>
     </section>
     <!-- Rooms Section End -->

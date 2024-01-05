@@ -1,7 +1,7 @@
 <?php 
 
 
- 
+
     class Notification{
         private $id;
         private $message ;
@@ -17,7 +17,7 @@
             $this->foreingresev = $foreingresev;
 
     }
-    
+
 
 
 

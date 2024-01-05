@@ -7,7 +7,7 @@ require_once 'connection\connexion.php';
  include "Model\horraire\horraireDAO.php" ;
  include "Model\user\userDAO.php" ;
  include "Model/Reservation/reservationDAO.php";
-include "Model/City/CityDAO.php";
+include "Model/CityAPI/CityDAO.php";
 
 
 
@@ -17,21 +17,21 @@ class controller_users{
         $this->db = Database::getInstance()->getConnection(); 
     }
     function getusers()  {
-        
+
         $userDAO = new userDAO() ;
         $users = $userDAO-> get_users();
-     
+
         include "View\operateur_add.php" ; 
         include "View\user.php" ; 
 
-     
-     
+
+
         }
 }
 class contoller_companys {
 
     function getcompanys()  {
-        
+
    $companyDAO = new CompanyDAO() ;
    $companys = $companyDAO-> get_companys();
 
@@ -41,7 +41,7 @@ class contoller_companys {
     }
 
     function getcompanysForm()  {
-        
+
    $companyDAO = new CompanyDAO() ;
    $companys = $companyDAO-> get_companys();
 
@@ -55,10 +55,10 @@ class contoller_companys {
         $id = "2345678901234"  ; 
         $companyDAO = new CompanyDAO() ;
         $company = $companyDAO->getcompanyByID($id) ;
-  
+
         include "View\companyForm.php" ; 
     }
- 
+
 
 
     function setcompanys()  {
@@ -73,14 +73,14 @@ class contoller_companys {
     $companyDAO->update_company($company);
 
     include "View\companyForm.php"  ; 
-       
+
     }
 }
 
 class contoller_BUSs {
 
     function getBUSs()  {
-        
+
    $BUSDAO = new BUSDAO() ;
    $BUSs = $BUSDAO-> get_BUSs();
 
@@ -90,7 +90,7 @@ class contoller_BUSs {
     }
 
     function getBUSsForm()  {
-        
+
    $BUSDAO = new BUSDAO() ;
    $BUSs = $BUSDAO-> get_BUSs();
 
@@ -104,10 +104,10 @@ class contoller_BUSs {
         $id = "2345678901234"  ; 
         $BUSDAO = new BUSDAO() ;
         $BUS = $BUSDAO->getBUSByID($id) ;
-  
+
         include "View\BUSForm.php" ; 
     }
- 
+
 
 
     function setBUSs()  {
@@ -123,7 +123,7 @@ class contoller_BUSs {
     $BUSDAO->update_BUS($BUS);
 
     include "View\BUSForm.php"  ; 
-       
+
     }
 }
 
@@ -131,7 +131,7 @@ class contoller_BUSs {
 class contoller_Routes {
 
     function getRoutes()  {
-        
+
    $RouteDAO = new RouteDAO() ;
    $Routes = $RouteDAO-> get_Routes();
 
@@ -141,7 +141,7 @@ class contoller_Routes {
     }
 
     function getRoutesForm()  {
-        
+
    $RouteDAO = new RouteDAO() ;
    $Routes = $RouteDAO-> get_Routes();
 
@@ -155,10 +155,10 @@ class contoller_Routes {
         $id = "2345678901234"  ; 
         $RouteDAO = new RouteDAO() ;
         $Route = $RouteDAO->getRouteByID($id) ;
-  
+
         include "View\RouteForm.php" ; 
     }
- 
+
 
 
     function setRoutes()  {
@@ -175,32 +175,49 @@ class contoller_Routes {
     $RouteDAO->update_Route($Route);
 
     include "View\RouteForm.php"  ; 
-       
+
     }
 }
 
 class contoller_horraires {
 
     function gethorraires()  {
-        
+
    $horraireDAO = new horraireDAO() ;
    $horraires = $horraireDAO-> get_horraires();
+ 
    $BUSDAO = new BUSDAO();
    $companyDAO = new CompanyDAO();
     $cityDAO = new CityDAO();
-   foreach ($horraires as $horraire){
-    $horraire->setNameofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
-    $horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
-   }
-   $Cities = $cityDAO->get_Citys();
+    foreach ($horraires as $horraire){
+        $horraire->setNameofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+        $horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+        // var_dump($horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus()))));
+       }
+       
+   $Cities = $cityDAO->getCities();
    include "View/rooms.php" ; 
 
 
     }
-    
+
+    function getplacesesbyidvoy($idVoy){
+
+
+        $BusDAO = new BUSDAO();
+        $horraireDAO = new horraireDAO();
+        $horraire = $horraireDAO->gethorraireByID($idVoy);
+
+        $capacities = $BusDAO->get_capacity_of_Bus($horraire->getBus());
+        
+
+        return $capacities;
+
+    }
+
 
     function gethorrairesForm()  {
-        
+
    $horraireDAO = new horraireDAO() ;
    $horraires = $horraireDAO-> get_horraires();
 
@@ -214,10 +231,10 @@ class contoller_horraires {
         $id = "2345678901234"  ; 
         $horraireDAO = new horraireDAO() ;
         $horraire = $horraireDAO->gethorraireByID($id) ;
-  
+
         include "View\horraireForm.php" ; 
     }
- 
+
 
 
     function sethorraires()  {
@@ -234,26 +251,26 @@ class contoller_horraires {
     $horraireDAO->update_horraire($horraire);
 
     include "View\horraireForm.php"  ; 
-       
+
     }
 }
 
 class contoller_Citys {
 
     function getCitys()  {
-        
-   $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
 
-   include "View\City.php" ; 
+   $CityDAO = new CityDAO() ;
+   $Cities = $CityDAO-> getCities();
+
+   include "View/rooms.php" ; 
 
 
     }
 
     function getCitysForm()  {
-        
+
    $CityDAO = new CityDAO() ;
-   $Citys = $CityDAO-> get_Citys();
+   $Citys = $CityDAO-> getCities();
 
  return $Citys ;
 
@@ -265,16 +282,67 @@ class contoller_Citys {
         $id = "2345678901234"  ; 
         $CityDAO = new CityDAO() ;
         $City = $CityDAO->getCityByID($id) ;
-  
+
         include "View\CityForm.php" ; 
     }
- 
+
 }
 
 class Notification {
 
-    function getnotificationforadmin(){
+    function getnotificationforreserve(){
+        
         $NotifDAO = new NotificationDAO();
-        $Notifs = $NotifDAO->add_notification_for_admins();
+        $NotifDAO->add_notification_for_reservation($message,$idreservation,$reservationid);
+    }
+}
+class Controller_searsh {
+    function searsh(){
+
+        $CityDAO = new CityDAO();
+        $BUSDAO = new BUSDAO();
+        $companyDAO = new CompanyDAO();
+
+        if($_SERVER["methode_request"] = "post"){
+            $searshvar = new horraireDAO();
+            if(isset($_POST["Depart_City"]) && isset($_POST["Arrive_City"]))
+            $depart = $_POST["Depart_City"];
+            $arrive = $_POST["Arrive_City"];
+            $datetime = $_POST["datetime"];
+
+
+            if($depart != $arrive){
+            $_SESSION["depart"] = $depart;
+            $_SESSION["arrive"] = $arrive;
+
+            $horraires = $searshvar->get_horraires_by_search($depart, $arrive,$datetime);
+            }else if(!empty($datetime)){
+                var_dump($datetime);
+                $horraires = $searshvar->get_horraires_by_date($datetime);
+            }else{
+                $horraires = $searshvar->get_horraires();
+            }
+
+        }
+
+
+        foreach ($horraires as $horraire) {
+            $horraire->setNameofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+    $horraire->setImageofthecompany($companyDAO->get_immage_of_the_company($BUSDAO->get_companys_ID($horraire->getBus())));
+
+        }
+        $Cities = $CityDAO->getCities();
+
+        include "View/rooms.php";
+
+    }
+}
+
+class Controller_reservation{
+    function add_reservation_controller($idofvoyage){
+        $reservationDAO = new ReservationDAO();
+
+
+
     }
 }

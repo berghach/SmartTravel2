@@ -27,7 +27,7 @@
 </head>
 
 <body>
-<?php include 'nav.php' ?>
+<?php include 'View/nav.php' ?>
 
     <!-- Breadcrumb Section Begin -->
     <div class="breadcrumb-section">
