@@ -21,70 +21,48 @@
     <title>Document</title>
 </head>
 <body>
-  
-
-<div  class="d-flex flex-row">
-<label>Choose Seat</label>
-<div class="bus seat2-2 border-0 p-0">
-<?php
-$i = 1;
-$x = 1;
- while($i<= $capacities){ ?>
-  <div class="seat-row-<?php echo $x; ?>">
-    <ol class="seats">
-      <?php 
-  $y = 0;
-  while($i<= $capacities && $y <4){
-
-  ?>
-      <li class="seat">
-        <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-radio-1-<?php echo $i; ?>" value="<?php echo $i; ?>" required="" type="radio" disabled>
-        <label for="seat-radio-1-<?php echo $i; ?>">
-        <?php echo $i; ?>                                                                        </label>
-      </li>
-
-      <?php
-    $y++;
-    $i++;
-    } 
-    
-    $x++;
-    ?>
-      
-    </ol>
-  </div>
-  
-  <?php } ?>
-  
-  
-  
-  
-  
-</div>
-
-
-
-
-
-<div class="text-left mt-2">
-  <button class="btn btn-primary btn-xs mb-2">Available</button>
-  <button class="btn btn-success btn-xs mb-2">Choosen</button>
-  <button class="btn btn-danger btn-xs mb-2">Booked</button>
-</div>
-
-
-          <div>
-          <form class="form-inline">
-            <div class="form-group mb-2">
-              <label for="staticEmail2" class="sr-only">Email</label>
-              <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+<form method="post" action="index.php?action=confirmReservation">
+        <div class="d-flex flex-row">
+            <label>Choose Seat</label>
+            <div class="bus seat2-2 border-0 p-0">
+                <?php
+                $i = 1;
+                $x = 1;
+                while ($i <= $capacities) { ?>
+                    <div class="seat-row-<?php echo $x; ?>">
+                        <ol class="seats">
+                            <?php
+                            $y = 0;
+                            while ($i <= $capacities && $y < 4) { ?>
+                                <li class="seat">
+                                    <input role="input-passenger-seat" name="selectedSeat" id="seat-radio-1-<?php echo $i; ?>" value="<?php echo $i; ?>" required="" type="radio">
+                                    <label for="seat-radio-1-<?php echo $i; ?>">
+                                        <?php echo $i; ?>
+                                    </label>
+                                </li>
+                                <?php
+                                $y++;
+                                $i++;
+                            }
+                            $x++;
+                            ?>
+                        </ol>
+                    </div>
+                <?php } ?>
             </div>
-            <div class="form-group mx-sm-3 mb-2">
-              <label for="inputPassword2" class="sr-only">Password</label>
-              <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+
+            <div class="text-left mt-2">
+                <button class="btn btn-primary btn-xs mb-2">Available</button>
+                <button class="btn btn-success btn-xs mb-2">Choosen</button>
+                <button class="btn btn-danger btn-xs mb-2">Booked</button>
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
-          </form>
+
+            <div>
+              <input placeholder="email" name="email_inputed"></input>
+                <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+            </div>
+        </div>
+    </form>
           </div>
 
 
@@ -100,3 +78,11 @@ $x = 1;
     <script src="js/main.js"></script>
 </body>
 </html>
+
+<script>
+    function updateSelectedSeat(seatNumber) {
+        console.log('Updating selected seat:', seatNumber);
+        document.getElementById('selectedSeat').value = seatNumber;
+    }
+</script>
+

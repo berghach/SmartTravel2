@@ -339,7 +339,7 @@ class Controller_searsh {
 }
 
 class Controller_reservation{
-    function add_reservation_controller($idofvoyage){
+    function add_reservation_controller($reservationId,$emailuser,$numberoftheseat){
         $reservationDAO = new ReservationDAO();
 
 
