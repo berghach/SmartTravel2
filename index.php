@@ -9,38 +9,39 @@ $contoller_Routes = new contoller_route() ;
 $contoller_horraires = new contoller_horraires() ; 
 $controler_city = new contoller_Citys();
 $contoller_searshes = new Controller_searsh();
-include("View\home.php");
-// session_start();
-// if (isset($_GET["action"])) {
-//     $action = $_GET["action"];
+$controller_reserve = new Controller_reservation();
+// include("View\home.php");
+session_start();
+if (isset($_GET["action"])) {
+    $action = $_GET["action"];
 
-//     if ($action === "find") {
-//         // $contoller_horraires->gethorraires($depart,$arrive) ;
-//         $contoller_searshes->searsh() ;
-//     }
-//     if ($action === "reserve") {
-//         // $contoller_horraires->gethorraires($depart,$arrive) ;
-//         $contoller_searshes->searsh() ;
-//     }
+    if ($action === "find") {
+        // $contoller_horraires->gethorraires($depart,$arrive) ;
+        $contoller_searshes->searsh() ;
+    }
+    if ($action === "reserve") {
+        // $contoller_horraires->gethorraires($depart,$arrive) ;
+        $controller_reserve->searsh() ;
+    }
 
-//     // Add condition to display travels
-//     if ($action === "travels") {
-//         $controller_Travels->getTravels();
-//     }
-// } else {
-//     if(!empty($_SESSION["depart"]) && !empty($_SESSION["arrive"])){
-//         $depart = $_SESSION["depart"];
-//         $arrive = $_SESSION["arrive"];
-//     }else{
+    // Add condition to display travels
+    if ($action === "travels") {
+        $controller_Travels->getTravels();
+    }
+} else {
+    if(!empty($_SESSION["depart"]) && !empty($_SESSION["arrive"])){
+        $depart = $_SESSION["depart"];
+        $arrive = $_SESSION["arrive"];
+    }else{
 
-//     }
+    }
 
-//     $depart = '';
-//     $arrive = '';
-//     $contoller_horraires->gethorraires() ;
+    $depart = '';
+    $arrive = '';
+    $contoller_horraires->gethorraires() ;
 
 
-// }
+}
 
 // if (isset($_GET["action"])) {
 //     switch ($action) {
