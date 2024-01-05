@@ -31,8 +31,8 @@
             <div class="col-sm-10">
                 <select id="vil_dep" name="vil_dep" class="form-control">
                     <?php foreach ($villes as $v) { ?>
-                        <option value="<?= $v->getNomVil(); ?>">
-                            <?= $v->getNomVil(); ?>
+                        <option value="<?= $v->getObjectId(); ?>">
+                            <?= $v->getName(); ?>
                         </option>
                     <?php } ?>
                 </select>
@@ -44,8 +44,8 @@
             <div class="col-sm-10">
                 <select id="vil_arv" name="vil_arv" class="form-control">
                     <?php foreach ($villes as $v) { ?>
-                        <option value="<?= $v->getNomVil(); ?>">
-                            <?= $v->getNomVil(); ?>
+                        <option value="<?= $v->getObjectId(); ?>">
+                            <?= $v->getName(); ?>
                         </option>
                     <?php } ?>
                 </select>

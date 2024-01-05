@@ -76,10 +76,10 @@
                     <?php foreach ($routes as $b) { ?>
                         <tr>
                             <td>
-                            <?= $b->getDepart_city(); ?>
+                            <?= $b->getDepcityName(); ?>
                             </td>
                             <td>
-                            <?= $b->getArrive_city(); ?>
+                            <?= $b->getArvcityName(); ?>
                             </td>
                             <td>
                                 <?= $b->getDist(); ?><span> KM</span>

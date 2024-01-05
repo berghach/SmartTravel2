@@ -282,4 +282,11 @@ INSERT INTO Entreprise (nomEn, img) VALUES
 ('Rif Explorers', 'rif_explorers_logo.png'),
 ('Atlas Trekking', 'atlas_trekking_logo.png');
 
+-- new route
 
+create table route (
+idVil_dep VARCHAR(50),
+idVil_arv VARCHAR(50) ,
+PRIMARY KEY (idVil_dep, idVil_arv),
+dist float not null,
+duree time not null);

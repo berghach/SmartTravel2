@@ -77,7 +77,8 @@ class CityDAO {
             $cityId = $data['objectId'];
             $cityName = $data['asciiname'];
             $population = $data['population'];
-            return new City($cityId, $cityName, $population);
+            // return new City($cityId, $cityName, $population);
+            return $cityName;
         } else {
             return new City(null, null, null);
         }

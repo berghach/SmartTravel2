@@ -9,7 +9,8 @@ class Route
     private $dist;
     private $duree;
 
-
+    private $depcityName;
+    private $arvcityName;
 
 
 
@@ -26,7 +27,14 @@ class Route
 
     }
 
-
+    public function setdepcityName($depcityName)
+    {
+            $this->depcityName = $depcityName;
+    }
+    public function setarvcityName($arvcityName)
+    {
+            $this->arvcityName = $arvcityName;
+    }
     public function getDepart_city()
     {
         return $this->depart_city;
@@ -56,6 +64,27 @@ class Route
     public function getDist()
     {
         return $this->dist;
+    }
+
+    /**
+     * Get the value of cityName
+     */ 
+
+
+    /**
+     * Get the value of depcityName
+     */ 
+    public function getDepcityName()
+    {
+        return $this->depcityName;
+    }
+
+    /**
+     * Get the value of arvcityName
+     */ 
+    public function getArvcityName()
+    {
+        return $this->arvcityName;
     }
 }
 ?>
