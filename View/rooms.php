@@ -68,7 +68,7 @@
     <section class="rooms-section spad">
         <div class="container">
 
-            <form  class="row" method="post" action="index.php?action=find">
+            <form  class="row" method="post" action="index.php?action=reserve">
             <?php foreach($horraires as $horraire) : ?>
                 <div class="col-lg-4 col-md-6">
 
@@ -105,7 +105,7 @@
                             </table>
 
                             <!-- botona dyl reservation -->
-                            <button value="<?php echo $horraire->getIdVoy(); ?>" name="reservationid" class="btn btn-outline-secondary primary-btn"><a  class="primary-btn">Reserve Now</a></button>
+                            <button type="submit" name="reservationid" value="<?php echo $horraire->getIdVoy(); ?>" class="btn btn-outline-secondary primary-btn"><a  class="primary-btn">Reserve Now</a></button>
                         </div>
                     </div>
                 </div>

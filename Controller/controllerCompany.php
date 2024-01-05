@@ -201,6 +201,20 @@ class contoller_horraires {
 
     }
 
+    function getplacesesbyidvoy($idVoy){
+
+
+        $BusDAO = new BUSDAO();
+        $horraireDAO = new horraireDAO();
+        $horraire = $horraireDAO->gethorraireByID($idVoy);
+
+        $capacities = $BusDAO->get_capacity_of_Bus($horraire->getBus());
+        
+
+        return $capacities;
+
+    }
+
 
     function gethorrairesForm()  {
 
@@ -325,7 +339,7 @@ class Controller_searsh {
 }
 
 class Controller_reservation{
-    function add_reservation_controller($idofvoyage){
+    function add_reservation_controller($reservationId,$emailuser,$numberoftheseat){
         $reservationDAO = new ReservationDAO();
 
 

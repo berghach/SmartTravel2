@@ -20,8 +20,19 @@ if (isset($_GET["action"])) {
         $contoller_searshes->searsh() ;
     }
     if ($action === "reserve") {
-        // $contoller_horraires->gethorraires($depart,$arrive) ;
-        $controller_reserve->searsh() ;
+        $reservationId = $_POST['reservationid']; // Get the value of the button
+      
+        $capacities = $contoller_horraires->getplacesesbyidvoy($reservationId);
+        include 'View/seats.php';
+        
+    }
+    if ($action === "confirmReservation") {
+        // Retrieve the selected seat number
+        $selectedSeat = $_POST['selectedSeat'];
+        $selectedSeat = $_POST['email_inputed'];
+        $selectedSeat = $_POST['email_inputed'];
+        $controller_reserve->add_reservation_controller($reservationId,$emailuser,$numberoftheseat);
+
     }
 
     // Add condition to display travels
