@@ -13,5 +13,17 @@ class PointDAO {
         $result = $stmt->fetchAll();
         return $result;
     }
+
+
+    public function incrementPoint($id) {
+        $query = "UPDATE points SET nbrPnts = nbrPnts + 1 WHERE dPnts = '$id'";
+        $this->db->exec($query);
+    }
+
+    
+
+    
+
+
 }   
 ?>
