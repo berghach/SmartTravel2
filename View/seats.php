@@ -38,7 +38,7 @@ $x = 1;
 
   ?>
       <li class="seat">
-        <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-radio-1-<?php echo $i; ?>" value="<?php echo $i; ?>" required="" type="radio" disabled>
+        <input role="input-passenger-seat" name="passengers[1][seat]" id="seat-radio-1-<?php echo $i; ?>" value="<?php echo $i; ?>" required="" type="radio">
         <label for="seat-radio-1-<?php echo $i; ?>">
         <?php echo $i; ?>                                                                        </label>
       </li>

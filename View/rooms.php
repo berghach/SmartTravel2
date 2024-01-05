@@ -105,7 +105,7 @@
                             </table>
 
                             <!-- botona dyl reservation -->
-                            <button value="<?php echo $horraire->getIdVoy(); ?>" name="reservationid" class="btn btn-outline-secondary primary-btn"><a  class="primary-btn">Reserve Now</a></button>
+                            <button value="<?php echo $horraire->getIdVoy(); ?>" name="reservationid" class="btn btn-outline-secondary primary-btn" onclick="reserveNow(<?php echo $horraire->getIdVoy(); ?>)"><a  class="primary-btn">Reserve Now</a></button>
                         </div>
                     </div>
                 </div>
@@ -219,3 +219,4 @@
 </body>
 
 </html>
+
