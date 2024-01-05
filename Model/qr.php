@@ -12,10 +12,13 @@ class QrCode {
 
 // HOW TO USE IT?
 // JUST DO THIS
-/*
-include "qr.php";
-$qrContent = "Hello";
-echo QrCode::generateQrCode($qrContent, 500);
-*/
+
+// include "qr.php";
+// $qrContent = "Hello";
+// echo QrCode::generateQrCode($qrContent, 500);
+
+// $msg = "I'm berghach";
+// echo QrCode::generateQrCode($msg);
+
 
 ?>
