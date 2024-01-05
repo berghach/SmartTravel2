@@ -22,11 +22,11 @@ class NotificationDAO{
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $DAOuser = new userDAO();
         $resultObj = array();
-    
+
         foreach ($result as $notification) {
             $resultObj[] = new notification($notification['idNot'], $notification['user_role'],$notification['fk_idRes'],$notification['msg']);
         }
         return $resultObj;
     }
-        
+
 }

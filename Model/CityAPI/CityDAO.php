@@ -1,6 +1,6 @@
 <?php
 
-require_once "City.php";
+require_once "Model/CityAPI/City.php";
 
 class CityDAO {
 
