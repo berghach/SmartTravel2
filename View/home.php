@@ -27,10 +27,11 @@
 </head>
 
 <body>
-<?php include 'nav.php' ?>
+<?php include 'View/nav.php' ?>
 
     <!-- Hero Section Begin -->
     <section class="hero-section">
+    
         <div class="container" style="margin-left: 10%;">
             <div class="row">
                 <div class="col-lg-6">
@@ -39,12 +40,15 @@
                         <p>Discover the Heart of Morocco with Effortless Bus Reservations – Where Local Exploration
                             Begins!</p>
                         <a href="#" class="primary-btn">Discover Now</a>
+                        <div style="margin-left: 10%;">
+                <?php include 'View\search.php' ?>
+                </div>
                     </div>
+                    
                 </div>
-                <div style="margin-left: 10%;">
-                <?php include 'search.php' ?>
-                </div>
+                
             </div>
+            
         </div>
         <div class="hero-slider owl-carousel">
             <div class="hs-item set-bg" data-setbg="assets/imgs/bus.jpg"></div>
