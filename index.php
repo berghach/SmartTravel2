@@ -20,18 +20,19 @@ if (isset($_GET["action"])) {
         $contoller_searshes->searsh() ;
     }
     if ($action === "reserve") {
-        $reservationId = $_POST['reservationid']; // Get the value of the button
-      
-        $capacities = $contoller_horraires->getplacesesbyidvoy($reservationId);
-        include 'View/seats.php';
+        
+        $capacities = $contoller_horraires->getplacesesbyidvoy();
+        
         
     }
     if ($action === "confirmReservation") {
         // Retrieve the selected seat number
-        $selectedSeat = $_POST['selectedSeat'];
-        $selectedSeat = $_POST['email_inputed'];
-        $selectedSeat = $_POST['email_inputed'];
-        $controller_reserve->add_reservation_controller($reservationId,$emailuser,$numberoftheseat);
+        $numberoftheseat = intval($_POST['selectedSeat']);
+
+        
+        $contoller_users->addvisiteur();
+        $reservationId = intval($_SESSION['reservationid']);
+        $controller_reserve->add_reservation_controller($reservationId,$numberoftheseat);
 
     }
 

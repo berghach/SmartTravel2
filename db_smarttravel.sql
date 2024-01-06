@@ -99,6 +99,7 @@ CREATE TABLE users (
     FOREIGN KEY (fk_idEn) REFERENCES Entreprise(idEn)
 );
 --@block
+DROP TRIGGER before_insert_users;
 CREATE TRIGGER before_insert_users
 BEFORE INSERT ON users
 FOR EACH ROW
@@ -113,6 +114,21 @@ BEGIN
         SET MESSAGE_TEXT = 'Invalid data for the specified role.';
     END IF;
 END;
+-- @block
+Alter TABLE users
+Modify COLUMN password VARCHAR(255);
+-- @block
+INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn)
+VALUES (
+    'far@f.m',
+    'far@f.m',
+    NULL,
+    'visitor',
+    NULL,
+    NULL,
+    NULL
+);
+
 --@block
 
 CREATE TABLE Autobus (
@@ -247,6 +263,9 @@ FOREIGN KEY (fk_idPnts) REFERENCES points(idPnts),
 num_sieg int not null,
 date_res DATETIME);
 --@block
+ALTER TABLE reservation
+Modify COLUMN fk_idPnts int unique;
+-- @block
 CREATE TRIGGER before_insert_reserv
 BEFORE INSERT ON reservation
 FOR EACH ROW

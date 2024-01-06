@@ -59,6 +59,7 @@
 
             <div>
               <input placeholder="email" name="email_inputed"></input>
+              <input placeholder="email" name="user_inputed"></input>
                 <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
             </div>
         </div>
