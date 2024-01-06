@@ -12,29 +12,21 @@ include "Model/CityAPI/CityDAO.php";
 
 
 class controller_users{
-    private $db;
-    public function __construct(){
-        $this->db = Database::getInstance()->getConnection(); 
-    }
+    
     function getusers()  {
 
         $userDAO = new userDAO() ;
         $users = $userDAO-> get_users();
-
-        include "View\operateur_add.php" ; 
-        include "View\user.php" ;
-
-
         }
 
-
-    function getUsersForRestPassword() {
+    function addvisiteur(){
+        $emailuser = $_POST['email_inputed'];
+        $name = $_POST['user_inputed'];
         $userDAO = new userDAO() ;
-        $users = $userDAO-> get_users();
-        include "View\\reset-password-view.php" ;
+        $user = new user($name, $emailuser, "", "visitor", 1, date("Y-m-d H:i:s"));
+        $userDAO->ajout_operateur($user);	
+       
     }
-
-    
 }
 class contoller_companys {
 
@@ -209,17 +201,18 @@ class contoller_horraires {
 
     }
 
-    function getplacesesbyidvoy($idVoy){
-
+    function getplacesesbyidvoy(){
+        $reservationId = $_POST['reservationid']; // Get the value of the button
+        $_SESSION['reservationid'] = $reservationId;
 
         $BusDAO = new BUSDAO();
         $horraireDAO = new horraireDAO();
-        $horraire = $horraireDAO->gethorraireByID($idVoy);
+        $horraire = $horraireDAO->gethorraireByID($reservationId);
 
         $capacities = $BusDAO->get_capacity_of_Bus($horraire->getBus());
         
 
-        return $capacities;
+        include 'View/seats.php';
 
     }
 
@@ -294,7 +287,7 @@ class contoller_Citys {
         include "View\CityForm.php" ; 
     }
 
-}
+}   
 
 class Notification {
 
@@ -347,8 +340,11 @@ class Controller_searsh {
 }
 
 class Controller_reservation{
-    function add_reservation_controller($idofvoyage){
+    function add_reservation_controller($reservationId,$numberoftheseat){
+        $emailuser = $_POST['email_inputed'];
         $reservationDAO = new ReservationDAO();
+        var_dump($reservationId,$emailuser,$numberoftheseat);
+        $reservationDAO->add_reservation($numberoftheseat,$emailuser,$reservationId);
 
 
 

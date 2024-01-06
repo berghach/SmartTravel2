@@ -41,7 +41,7 @@ class userDAO{
                 '" . $user->getRole() . "' ,
                 1, NULL, '" . $user->getFkIdEn() . "'
             )";
-        } else{
+        } elseif ($type == 'user'){
             $query = "INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES (
                 '" . $user->getName() . "' ,
                 '" . $user->getEmail() . "',
@@ -50,8 +50,17 @@ class userDAO{
                 1, '" . $user->getDate_register() . "',  NULL 
             )";
 
+        } elseif ($type == 'visitor'){
+            $query = "INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES (
+                '" . $user->getName() . "' ,
+                '" . $user->getEmail() . "',
+                NULL ,
+                '" . $user->getRole() . "' ,
+                NULL, NULL,  NULL 
+            )";
+            
         }
-        
+        var_dump($type, $query);
         $stmt = $this->db->prepare($query);
         $stmt->execute();
     }

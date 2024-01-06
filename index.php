@@ -20,10 +20,20 @@ if (isset($_GET["action"])) {
         $contoller_searshes->searsh() ;
     }
     if ($action === "reserve") {
-        $capacities = $contoller_horraires->getplacesesbyidvoy(41);
-        include 'View/seats.php';
-        // $contoller_horraires->gethorraires($depart,$arrive) ;
-        $controller_reserve->add_reservation_controller() ;
+        
+        $capacities = $contoller_horraires->getplacesesbyidvoy();
+        
+        
+    }
+    if ($action === "confirmReservation") {
+        // Retrieve the selected seat number
+        $numberoftheseat = intval($_POST['selectedSeat']);
+
+        
+        $contoller_users->addvisiteur();
+        $reservationId = intval($_SESSION['reservationid']);
+        $controller_reserve->add_reservation_controller($reservationId,$numberoftheseat);
+
     }
 
     // Add condition to display travels
