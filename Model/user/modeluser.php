@@ -1,6 +1,7 @@
 <?php 
 class user{
   
+
     private $name;
     private $email ;
     private $password;
@@ -13,6 +14,7 @@ class user{
 
     public function __construct( $name,$email , $password , $role,$is_active ,$date_register){
      
+    
         $this->name = $name;
         $this->password = $password;
         $this->email = $email;
@@ -22,6 +24,8 @@ class user{
 
     }
     
+
+
 
     /**
      * Get the value of name

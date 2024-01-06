@@ -262,9 +262,13 @@ fk_idPnts int unique not null,
 FOREIGN KEY (fk_idPnts) REFERENCES points(idPnts),
 num_sieg int not null,
 date_res DATETIME);
+-- @block
+INSERT INTO reservation (num_sieg, fk_email, fk_idVoy, date_res) VALUES (93, 'chakwa', 40, CURDATE());
 --@block
 ALTER TABLE reservation
 Modify COLUMN fk_idPnts int unique;
+-- @block
+DROP TRIGGER before_insert_reserv;
 -- @block
 CREATE TRIGGER before_insert_reserv
 BEFORE INSERT ON reservation
@@ -318,3 +322,5 @@ END;
 -- @block
 SELECT fk_idEn from autobus where immat = "KL678"
 
+-- @block
+INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES ( 'sqs' , 'aa', NULL , 'visitor' , NULL, NULL, NULL )
