@@ -281,7 +281,7 @@ END;
 --@block
 create table notification (
 idNot int primary key AUTO_INCREMENT,
-user_role ENUM ('admin', 'operateur', 'client'),
+user_role ENUM ('admin', 'operateur', 'client' , 'visitor'),
 fk_idRes int not null,
 FOREIGN KEY (fk_idRes) REFERENCES reservation(idRes),
 msg varchar(100) not null);
