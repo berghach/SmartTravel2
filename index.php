@@ -21,7 +21,7 @@ if (isset($_GET["action"])) {
     }
     if ($action === "reserve") {
         
-        $capacities = $contoller_horraires->getplacesesbyidvoy();
+        $contoller_horraires->getplacesesbyidvoy();
         
         
     }

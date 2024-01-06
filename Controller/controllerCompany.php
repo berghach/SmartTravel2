@@ -8,7 +8,7 @@ require_once 'connection\connexion.php';
  include "Model\user\userDAO.php" ;
  include "Model/Reservation/reservationDAO.php";
 include "Model/CityAPI/CityDAO.php";
-
+include "Model/qr.php";
 
 
 class controller_users{
