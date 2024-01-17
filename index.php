@@ -10,10 +10,18 @@ $contoller_horraires = new contoller_horraires() ;
 $controler_city = new contoller_Citys();
 $contoller_searshes = new Controller_searsh();
 $controller_reserve = new Controller_reservation();
+
+include "Controller\\RestetPasswordController.php" ;
+$resetpasswordController = new RestetPasswordController();
+
 // include("View\home.php");
 session_start();
 if (isset($_GET["action"])) {
     $action = $_GET["action"];
+
+    if ($action === "resetpassword") {
+        $resetpasswordController->resetPassword();
+    }
 
     if ($action === "find") {
         // $contoller_horraires->gethorraires($depart,$arrive) ;

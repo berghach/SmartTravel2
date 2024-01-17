@@ -4,7 +4,7 @@ $userIsExist = 0;
 // $id = "84646";
 $id = $_GET["token"];
 foreach($users as $user) {
-  print_r($user->getName());
+  // print_r($user->getName());
   if($user->getId() == $id) {
     $userIsExist = 1;
   }
@@ -49,24 +49,22 @@ if($userIsExist) {
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
-
-                
+                <form action="index.php?action=resetpassword&token=<?= $id ?>" method="post">
 
                   <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Reset your password!</h3>
 
                   <div class="form-outline mb-4">
-                    <input type="password" name = "password" id="form2Example27" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example27">Password</label>
+                    <input type="password" name = "new_password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">New password</label>
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" name = "password" id="form2Example27" class="form-control form-control-lg" />
-                    <label class="form-label" for="form2Example27">Valid password</label>
+                    <input type="password" name = "confirm_password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Confirm password</label>
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block" type="button">Save password</button>
+                    <button class="btn btn-dark btn-lg btn-block" type="submit" name="submit" >Save password</button>
                   </div>
 
                   <a href="#!" class="small text-muted">Terms of use.</a>
