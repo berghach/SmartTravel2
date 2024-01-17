@@ -49,6 +49,9 @@ class user{
         return $this->password;
     }
 
+    public function setPassword($password) {
+        $this->password = $password;
+    }
     /**
      * Get the value of role
      */ 
