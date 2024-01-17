@@ -23,17 +23,15 @@ class RestetPasswordController {
             $confirmPassword = $_POST["confirm_password"];
 
             if (strlen($newPassword) < 8) {
-                echo "New password must be at least 8 characters long.";
+                echo '<div class="alert alert-danger" role="alert">New password must be at least 8 characters long.</div>';
             } elseif ($newPassword !== $confirmPassword) {
-                echo "Passwords do not match.";
+                echo '<div class="alert alert-danger" role="alert">Passwords do not match.</div>';
             } else {
                 $id = $_GET["token"];
                 $result = $this->userDAO->updatePasswordById($id, $newPassword);
                 if($result) {
-                    echo "Password updated successfully!";
+                    // echo "Password updated successfully!";
                     header("location: index.php");
-                } else {
-                    echo "Fail!";
                 }
 
             }
