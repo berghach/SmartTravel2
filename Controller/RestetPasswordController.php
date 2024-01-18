@@ -18,6 +18,8 @@ class RestetPasswordController {
 
     public function resetPassword() {
 
+
+
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
             $newPassword = $_POST["new_password"];
             $confirmPassword = $_POST["confirm_password"];
@@ -39,6 +41,22 @@ class RestetPasswordController {
         }
 
         $users = $this->userDAO->get_users();
+
+        if(isset($_GET["token"])) {
+            $userIsExist = false;
+            $id = $_GET["token"];
+            foreach($users as $user) {
+                if($user->getId() == $id) {
+                    $userIsExist = true;
+                }
+            }
+
+            if(!$userIsExist) {
+                include "View\\NOT-FOUND-PAGE.php" ;
+                die();
+            }
+        }
+
         include "View\\reset-password-view.php" ; 
     }
 

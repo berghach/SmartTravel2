@@ -1,18 +1,6 @@
 <?php
 
-$userIsExist = 0;
-// $id = "84646";
-$id = $_GET["token"];
-foreach($users as $user) {
-  // print_r($user->getName());
-  if($user->getId() == $id) {
-    $userIsExist = 1;
-  }
-}
 
-if(!$userIsExist) {
-  exit();
-}
 
 ?>
 
