@@ -1,20 +1,6 @@
 <?php
 
-$userIsExist = 0;
-// $id = "84646";
-$id = $_GET["token"];
-foreach($users as $user) {
-  // print_r($user->getName());
-  if($user->getId() == $id) {
-    $userIsExist = 1;
-  }
-}
 
-if($userIsExist) {
-  print_r("YES");
-} else {
-  exit();
-}
 
 ?>
 
@@ -23,7 +9,7 @@ if($userIsExist) {
 <head>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SmartTravel - Reset password</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -35,7 +21,7 @@ if($userIsExist) {
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
-<body style="background-color:#dfa974;">
+<body style="background-color:#E390B9;">
   <section class="vh-110">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -43,7 +29,7 @@ if($userIsExist) {
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="assets\imgs\bus.jpg"
+              <img src="https://plus.unsplash.com/premium_photo-1677194562330-2210f33e2576?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="login form" class="img-fluid h-100 w-100" style="border-radius: 1rem 0 0 1rem;" />
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -64,7 +50,7 @@ if($userIsExist) {
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block" type="submit" name="submit" >Save password</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" >Save password</button>
                   </div>
 
                   <a href="#!" class="small text-muted">Terms of use.</a>

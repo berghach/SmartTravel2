@@ -18,7 +18,7 @@ class SendMail{
             $mail->Subject = 'Password Reset Request';
             $mail->Body = "
                 <p>Hello,</p>
-                <p>We received a request to reset your password for your SmartTravel account. Your new password is:</p>
+                <p>We received a request to reset your password for your SmartTravel account.</p>
                 <p><strong>http://localhost/brief-10/index.php?action=resetpassword&token=$token</strong></p>
                 <p>If you did not make this request, please ignore this email.</p>
                 <p>Thank you,<br>SmartTravel Support Team</p>
