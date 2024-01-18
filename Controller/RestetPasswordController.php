@@ -6,6 +6,8 @@ require_once "Model\user\modeluser.php" ;
 
 require_once "mail\sendMail.php";
 
+require_once "mail\TokenGenerator.php";
+
 
 class RestetPasswordController {
 
@@ -29,7 +31,8 @@ class RestetPasswordController {
             } elseif ($newPassword !== $confirmPassword) {
                 echo '<div class="alert alert-danger" role="alert">Passwords do not match.</div>';
             } else {
-                $id = $_GET["token"];
+        
+                $id = TokenGenerator::tokenToId($_GET["token"]);
                 $result = $this->userDAO->updatePasswordById($id, $newPassword);
                 if($result) {
                     // echo "Password updated successfully!";
@@ -44,7 +47,7 @@ class RestetPasswordController {
 
         if(isset($_GET["token"])) {
             $userIsExist = false;
-            $id = $_GET["token"];
+            $id = TokenGenerator::tokenToId($_GET["token"]);
             foreach($users as $user) {
                 if($user->getId() == $id) {
                     $userIsExist = true;
