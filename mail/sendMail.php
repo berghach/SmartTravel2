@@ -1,6 +1,6 @@
 <?php
 
-
+include("TokenGenerator.php");
 
 
 class SendMail{
@@ -42,7 +42,9 @@ class SendMail{
 
 $sendMail = new sendMail();
 
-$sendMail->resetPassword("badreddynelhirch2@gmail.com", "1");
+$token = TokenGenerator::generateToken(1);
+// print_r($token);
+$sendMail->resetPassword("badreddynelhirch2@gmail.com", $token);
 
 
 

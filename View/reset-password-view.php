@@ -35,7 +35,7 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form action="index.php?action=resetpassword&token=<?= $id ?>" method="post">
+                <form action="index.php?action=resetpassword&token=<?= $_GET["token"] ?>" method="post">
 
                   <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Reset your password!</h3>
 
