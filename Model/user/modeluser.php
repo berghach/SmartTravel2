@@ -1,7 +1,11 @@
 <?php 
 class user{
   
+<<<<<<< HEAD
     private $id;
+=======
+
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
     private $name;
     private $email ;
     private $password;
@@ -14,7 +18,11 @@ class user{
 
     public function __construct($id, $name,$email , $password , $role,$is_active ,$date_register){
      
+<<<<<<< HEAD
         $this->id = $id;
+=======
+    
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
         $this->name = $name;
         $this->password = $password;
         $this->email = $email;
@@ -24,6 +32,8 @@ class user{
 
     }
     
+
+
 
     /**
      * Get the value of id
