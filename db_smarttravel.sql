@@ -298,4 +298,15 @@ SET img = CASE
 END;
 -- @block
 SELECT fk_idEn from autobus where immat = "KL678"
+-- @block
+ALTER TABLE users
+MODIFY COLUMN password VARCHAR(255);
+-- @block
+ALTER TABLE reservation
+MODIFY COLUMN fk_idPnts INT;
+-- @block
+
+INSERT INTO reservation (num_sieg, fk_email, fk_idVoy) VALUES (42,'aw', 46)
+-- @block
+DROP TRIGGER before_insert_reserv;
 
