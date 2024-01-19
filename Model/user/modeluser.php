@@ -1,6 +1,11 @@
 <?php 
 class user{
   
+<<<<<<< HEAD
+    private $id;
+=======
+
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
     private $name;
     private $email ;
     private $password;
@@ -11,8 +16,13 @@ class user{
 
 
 
-    public function __construct( $name,$email , $password , $role,$is_active ,$date_register){
+    public function __construct($id, $name,$email , $password , $role,$is_active ,$date_register){
      
+<<<<<<< HEAD
+        $this->id = $id;
+=======
+    
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
         $this->name = $name;
         $this->password = $password;
         $this->email = $email;
@@ -22,6 +32,16 @@ class user{
 
     }
     
+
+
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Get the value of name
@@ -39,6 +59,9 @@ class user{
         return $this->password;
     }
 
+    public function setPassword($password) {
+        $this->password = $password;
+    }
     /**
      * Get the value of role
      */ 
@@ -71,6 +94,8 @@ class user{
     {
         return $this->email;
     }
+
+
 }
 
 

@@ -8,7 +8,11 @@ require_once 'connection\connexion.php';
  include "Model\user\userDAO.php" ;
  include "Model/Reservation/reservationDAO.php";
 include "Model/CityAPI/CityDAO.php";
+include "Model/qr.php";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
 
 
 class controller_users{
@@ -23,7 +27,7 @@ class controller_users{
         $emailuser = $_POST['email_inputed'];
         $name = $_POST['user_inputed'];
         $userDAO = new userDAO() ;
-        $user = new user($name, $emailuser, "", "visitor", 1, date("Y-m-d H:i:s"));
+        $user = new user(1,$name, $emailuser, "", "visitor", 1, date("Y-m-d H:i:s"));
         $userDAO->ajout_operateur($user);	
        
     }
@@ -287,7 +291,7 @@ class contoller_Citys {
         include "View\CityForm.php" ; 
     }
 
-}
+}   
 
 class Notification {
 
@@ -343,10 +347,18 @@ class Controller_reservation{
     function add_reservation_controller($reservationId,$numberoftheseat){
         $emailuser = $_POST['email_inputed'];
         $reservationDAO = new ReservationDAO();
-        var_dump($reservationId,$emailuser,$numberoftheseat);
+        
         $reservationDAO->add_reservation($numberoftheseat,$emailuser,$reservationId);
 
+        $qr_code = new QrCode();
+        $content = "Le persone qui a ce email $emailuser a pris le voyage de id = $reservationId et la place $numberoftheseat";
 
+<<<<<<< HEAD
 
+        echo $qr_code->generateQrCode($content);
+
+=======
+        
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
     }
 }

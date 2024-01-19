@@ -8,19 +8,28 @@ class userDAO{
         $this->db = Database::getInstance()->getConnection(); 
     }
 
-    public function get_users(){
+    public function get_users() {
         $query = "SELECT * FROM users";
         $stmt = $this->db->query($query);
-        $stmt -> execute();
+        $stmt->execute();
         $usersData = $stmt->fetchAll();
-        $users = array();
-        foreach ($usersData as $B) {
-            $users[] = new user($B["name"],$B["email"],$B["password"],$B["role"],$B["is_active"],$B["date_register"]);
-            
+        $users = [];
+    
+        foreach ($usersData as $user) {
+            $users[] = new user(
+                $user["id"],
+                $user["name"],
+                $user["email"],
+                $user["password"],
+                $user["role"],
+                $user["is_active"],
+                $user["date_register"]
+            );
         }
+    
         return $users;
-
     }
+    
 
     public function ajout_operateur($user) {
         $type = $user->getRole();
@@ -60,15 +69,55 @@ class userDAO{
             )";
             
         }
-        var_dump($type, $query);
+        
         $stmt = $this->db->prepare($query);
         $stmt->execute();
     }
     
     
-    
-    
-    
-    
+    public function getUserById($id)
+    {
+        $query = "SELECT * FROM users WHERE id = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$userData) {
+            // User not found
+            return null;
+        }
+
+        return new user(
+            $userData["id"],
+            $userData["name"],
+            $userData["email"],
+            $userData["password"],
+            $userData["role"],
+            $userData["is_active"],
+            $userData["date_register"]
+        );
+    }
+
+
+    public function updatePasswordById($id, $newPassword)
+    {
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+        $query = "UPDATE users SET password = :password WHERE id = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':password', $hashedPassword, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+        if($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
+
 ?>

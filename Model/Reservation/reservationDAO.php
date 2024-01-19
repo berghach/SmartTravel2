@@ -32,18 +32,26 @@ class ReservationDAO {
         
 
     }
-    public function add_reservation($num_siege, $fk_email, $fk_voy) {
+    public function add_reservation($num_siege, $fk_email, $fk_idVoy) {
         try {
             $query = "INSERT INTO reservation (num_sieg, fk_email, fk_idVoy, date_res) VALUES (:num_siege, :fk_email, :fk_idVoy, CURDATE())";
+            var_dump($query);
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':num_siege', $num_siege, PDO::PARAM_INT);
             $stmt->bindParam(':fk_email', $fk_email, PDO::PARAM_STR);
-            $stmt->bindParam(':fk_idVoy', $fk_voy, PDO::PARAM_INT); // Assuming $fk_voy is an integer, adjust accordingly
+<<<<<<< HEAD
+            $stmt->bindParam(':fk_idVoy', $fk_voy, PDO::PARAM_INT); 
             $stmt->execute();
         } catch (PDOException $e) {
-            // Handle the exception
             echo "Error: " . $e->getMessage();
-            // You may want to return a specific error message or throw an exception here
+=======
+            $stmt->bindParam(':fk_idVoy', $fk_idVoy, PDO::PARAM_INT); // Assuming $fk_voy is an integer, adjust accordingly
+            $stmt->execute();
+        } catch (PDOException $e) {
+
+            echo "Error: " . $e->getMessage();
+
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
         }
     }
     

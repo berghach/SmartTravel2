@@ -10,10 +10,18 @@ $contoller_horraires = new contoller_horraires() ;
 $controler_city = new contoller_Citys();
 $contoller_searshes = new Controller_searsh();
 $controller_reserve = new Controller_reservation();
+
+include "Controller\\RestetPasswordController.php" ;
+$resetpasswordController = new RestetPasswordController();
+
 // include("View\home.php");
 session_start();
 if (isset($_GET["action"])) {
     $action = $_GET["action"];
+
+    if ($action === "resetpassword") {
+        $resetpasswordController->resetPassword();
+    }
 
     if ($action === "find") {
         // $contoller_horraires->gethorraires($depart,$arrive) ;
@@ -21,7 +29,7 @@ if (isset($_GET["action"])) {
     }
     if ($action === "reserve") {
         
-        $capacities = $contoller_horraires->getplacesesbyidvoy();
+        $contoller_horraires->getplacesesbyidvoy();
         
         
     }
@@ -32,7 +40,10 @@ if (isset($_GET["action"])) {
         
         $contoller_users->addvisiteur();
         $reservationId = intval($_SESSION['reservationid']);
+
         $controller_reserve->add_reservation_controller($reservationId,$numberoftheseat);
+
+        
 
     }
 

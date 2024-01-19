@@ -99,7 +99,6 @@ CREATE TABLE users (
     FOREIGN KEY (fk_idEn) REFERENCES Entreprise(idEn)
 );
 --@block
-DROP TRIGGER before_insert_users;
 CREATE TRIGGER before_insert_users
 BEFORE INSERT ON users
 FOR EACH ROW
@@ -114,21 +113,6 @@ BEGIN
         SET MESSAGE_TEXT = 'Invalid data for the specified role.';
     END IF;
 END;
--- @block
-Alter TABLE users
-Modify COLUMN password VARCHAR(255);
--- @block
-INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn)
-VALUES (
-    'far@f.m',
-    'far@f.m',
-    NULL,
-    'visitor',
-    NULL,
-    NULL,
-    NULL
-);
-
 --@block
 
 CREATE TABLE Autobus (
@@ -262,10 +246,17 @@ fk_idPnts int unique not null,
 FOREIGN KEY (fk_idPnts) REFERENCES points(idPnts),
 num_sieg int not null,
 date_res DATETIME);
+-- @block
+INSERT INTO reservation (num_sieg, fk_email, fk_idVoy, date_res) VALUES (93, 'chakwa', 40, CURDATE());
 --@block
+<<<<<<< HEAD
+=======
 ALTER TABLE reservation
 Modify COLUMN fk_idPnts int unique;
 -- @block
+DROP TRIGGER before_insert_reserv;
+-- @block
+>>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
 CREATE TRIGGER before_insert_reserv
 BEFORE INSERT ON reservation
 FOR EACH ROW
@@ -317,4 +308,17 @@ SET img = CASE
 END;
 -- @block
 SELECT fk_idEn from autobus where immat = "KL678"
+-- @block
+ALTER TABLE users
+MODIFY COLUMN password VARCHAR(255);
+-- @block
+ALTER TABLE reservation
+MODIFY COLUMN fk_idPnts INT;
+-- @block
 
+INSERT INTO reservation (num_sieg, fk_email, fk_idVoy) VALUES (42,'aw', 46)
+-- @block
+DROP TRIGGER before_insert_reserv;
+
+-- @block
+INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES ( 'sqs' , 'aa', NULL , 'visitor' , NULL, NULL, NULL )
