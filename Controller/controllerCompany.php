@@ -8,25 +8,26 @@ require_once 'connection\connexion.php';
  include "Model\user\userDAO.php" ;
  include "Model/Reservation/reservationDAO.php";
 include "Model/CityAPI/CityDAO.php";
+include "Model/qr.php";
 
 
 
 class controller_users{
-    private $db;
-    public function __construct(){
-        $this->db = Database::getInstance()->getConnection(); 
-    }
+    
     function getusers()  {
 
         $userDAO = new userDAO() ;
         $users = $userDAO-> get_users();
-
-        include "View\operateur_add.php" ; 
-        include "View\user.php" ; 
-
-
-
         }
+
+    function addvisiteur(){
+        $emailuser = $_POST['email_inputed'];
+        $name = $_POST['user_inputed'];
+        $userDAO = new userDAO() ;
+        $user = new user(1,$name, $emailuser, "", "visitor", 1, date("Y-m-d H:i:s"));
+        $userDAO->ajout_operateur($user);	
+       
+    }
 }
 class contoller_companys {
 
@@ -201,17 +202,18 @@ class contoller_horraires {
 
     }
 
-    function getplacesesbyidvoy($idVoy){
-
+    function getplacesesbyidvoy(){
+        $reservationId = $_POST['reservationid']; // Get the value of the button
+        $_SESSION['reservationid'] = $reservationId;
 
         $BusDAO = new BUSDAO();
         $horraireDAO = new horraireDAO();
-        $horraire = $horraireDAO->gethorraireByID($idVoy);
+        $horraire = $horraireDAO->gethorraireByID($reservationId);
 
         $capacities = $BusDAO->get_capacity_of_Bus($horraire->getBus());
         
 
-        return $capacities;
+        include 'View/seats.php';
 
     }
 
@@ -286,7 +288,7 @@ class contoller_Citys {
         include "View\CityForm.php" ; 
     }
 
-}
+}   
 
 class Notification {
 
@@ -339,10 +341,17 @@ class Controller_searsh {
 }
 
 class Controller_reservation{
-    function add_reservation_controller($idofvoyage){
+    function add_reservation_controller($reservationId,$numberoftheseat){
+        $emailuser = $_POST['email_inputed'];
         $reservationDAO = new ReservationDAO();
+        
+        $reservationDAO->add_reservation($numberoftheseat,$emailuser,$reservationId);
+
+        $qr_code = new QrCode();
+        $content = "Le persone qui a ce email $emailuser a pris le voyage de id = $reservationId et la place $numberoftheseat";
 
 
+        echo $qr_code->generateQrCode($content);
 
     }
 }

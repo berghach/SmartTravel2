@@ -15,7 +15,7 @@ class userDAO{
         $usersData = $stmt->fetchAll();
         $users = array();
         foreach ($usersData as $B) {
-            $users[] = new user($B["name"],$B["email"],$B["password"],$B["role"],$B["is_active"],$B["date_register"]);
+            $users[] = new user($B["id"],$B["name"],$B["email"],$B["password"],$B["role"],$B["is_active"],$B["date_register"]);
             
         }
         return $users;
@@ -41,7 +41,7 @@ class userDAO{
                 '" . $user->getRole() . "' ,
                 1, NULL, '" . $user->getFkIdEn() . "'
             )";
-        } else{
+        } elseif ($type == 'user'){
             $query = "INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES (
                 '" . $user->getName() . "' ,
                 '" . $user->getEmail() . "',
@@ -50,6 +50,15 @@ class userDAO{
                 1, '" . $user->getDate_register() . "',  NULL 
             )";
 
+        } elseif ($type == 'visitor'){
+            $query = "INSERT INTO users (name, email, password, role, is_active, date_register, fk_idEn) VALUES (
+                '" . $user->getName() . "' ,
+                '" . $user->getEmail() . "',
+                NULL ,
+                '" . $user->getRole() . "' ,
+                NULL, NULL,  NULL 
+            )";
+            
         }
         
         $stmt = $this->db->prepare($query);
