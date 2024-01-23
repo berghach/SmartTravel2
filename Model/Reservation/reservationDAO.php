@@ -39,19 +39,12 @@ class ReservationDAO {
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(':num_siege', $num_siege, PDO::PARAM_INT);
             $stmt->bindParam(':fk_email', $fk_email, PDO::PARAM_STR);
-<<<<<<< HEAD
-            $stmt->bindParam(':fk_idVoy', $fk_voy, PDO::PARAM_INT); 
-            $stmt->execute();
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-=======
             $stmt->bindParam(':fk_idVoy', $fk_idVoy, PDO::PARAM_INT); // Assuming $fk_voy is an integer, adjust accordingly
             $stmt->execute();
         } catch (PDOException $e) {
 
             echo "Error: " . $e->getMessage();
 
->>>>>>> 814e8817cf864f768fee8a615b01f9c0e8039575
         }
     }
     
