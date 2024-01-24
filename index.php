@@ -29,7 +29,7 @@ if (isset($_GET["action"])) {
     }
     if ($action === "reserve") {
         
-        $capacities = $contoller_horraires->getplacesesbyidvoy();
+        $contoller_horraires->getplacesesbyidvoy();
         
         
     }
@@ -40,7 +40,10 @@ if (isset($_GET["action"])) {
         
         $contoller_users->addvisiteur();
         $reservationId = intval($_SESSION['reservationid']);
+
         $controller_reserve->add_reservation_controller($reservationId,$numberoftheseat);
+
+        
 
     }
 

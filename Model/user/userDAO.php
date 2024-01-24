@@ -69,7 +69,7 @@ class userDAO{
             )";
             
         }
-        var_dump($type, $query);
+        
         $stmt = $this->db->prepare($query);
         $stmt->execute();
     }
